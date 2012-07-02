@@ -1,0 +1,188 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    background-position: 0;
+    background-image: url('../images/background.gif');
+    background-color: #fff;
+    font-size: 10pt;
+    font-family: Tahoma,Verdana, Arial;
+    color: #003c74;
+}
+/*---------------------------------------------------------------------*/
+.cbrErrorMsg, .cbrErrorMsgHuge
+{
+    width: 100%;
+    float: left;
+    clear: both;
+    text-align: center;
+    color: Red;
+    font-size: 1em;
+}
+.cbrErrorMsgHuge
+{
+    padding: 10px 0px;
+    font-size: 1.2em;
+}
+/* begin uctrl--------- ------*/
+.cbrCtrl, .cbrCtrl .cbrControlBody, .cbrCtrl .cbrControlHeader
+{
+    float: left;
+    clear: both;
+    width: 100%;
+}
+.cbrCtrl .cbrControlHeader p
+{
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #7F9DB9;
+    font-family: Arial, Tahoma, Verdana;
+    font-size: 13pt;
+    font-weight: bold;
+}
+/* end uctrl ------------------*/
+/* begin PageHeader.ascx ------*/
+.cbrPageHeader, .cbrPageHeader .cbrPageTop, .cbrPageHeader .cbrLoggedOn
+{
+    float: left;
+    clear: both;
+    width: 100%;
+}
+.cbrPageHeader
+{
+    background: #fff url('../images/header-line.png') repeat-x left 46px;
+}
+.cbrPageHeader .cbrPageTop
+{
+    height: 50px;
+    background: url('../images/header.jpg') no-repeat top left;
+}
+.cbrPageHeader .cbrPageTop table
+{
+    width: 100%;
+    border: none;
+}
+#defLoginError
+{
+    color: Red;
+}
+/* end   PageHeader.ascx ------*/
+/* begin LoginAdmin.ascx ------*/
+.cbrLoginAdmin .cbrControlBody
+{
+    height: 300px;
+    border: 0px;
+}
+.cbrLoginAdmin .cbrErrorMsgHuge
+{
+    height: 40px;
+}
+.cbrLoginAdmin .cbrForm
+{
+    clear: both;
+    float: left;
+    width: 100%;
+}
+.cbrLoginAdmin .cbrForm table
+{
+    width: 430px;
+    border-collapse: collapse;
+    border: solid 1px #7F9DB9;
+    font-size: 8pt;
+    color: #003c74;
+    background: #fff;
+}
+.cbrLoginAdmin .cbrForm .left
+{
+    width: 80px;
+}
+.cbrLoginAdmin .cbrForm .right
+{
+    width: 350px;
+}
+.cbrLoginAdmin .cbrForm .cbrBtnRow
+{
+    text-align: right;
+}
+.cbrLoginAdmin .cbrForm .cbrFrmText
+{
+    width: 100%;
+}
+/* end   LoginAdmin.ascx ------*/
+/* begin PageFooter.ascx ------*/
+.cbrPageFooter
+{
+    border-top: 1px dotted #7F9DB9;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+.cbrPageFooter .copyrights, .cbrPageFooter .pmm
+{
+    float: left;
+    clear: both;
+    width: 100%;
+}
+.cbrPageFooter .copyrights
+{
+    text-align: center;
+    font-size: 0.9em;
+}
+.cbrPageFooter .pmm
+{
+    text-align: right;
+}
+/* end   PageFooter.ascx ------*/
+
+/* begin tables ----------------*/
+.cbrTable, .cbrTableForm, .cbrGrid, .cbrTableParent
+{
+    width: 100%;
+    border: solid 1px #7F9DB9;
+}
+.cbrTableParent, .cbrTableForm
+{
+    background: #f3f3f3 !important;
+}
+.cbrTable, .cbrTableParent, .cbrTableForm
+{
+    background: #fff;
+    font-size: 8pt;
+    color: #003c74;
+    margin: 5px 0px;
+}
+.cbrTable label, .cbrTableParent label, .cbrTableForm label
+{
+    font-size: 8pt;
+}
+.cbrTableForm td
+{
+    background: #fff;
+}
+.cbrTable td.field, .cbrTableForm td.field
+{
+    font-weight: bold;
+    font-size: 8pt;
+    color: #003c74;
+}
+.cbrTblHeader
+{
+    background: url('../images/tblheader_bg.gif') !important;
+    font-size: 8pt;
+    font-weight: bold;
+    text-align: left;
+    overflow: hidden;
+    height: 13px;
+}
+.cbrFrmButton
+{
+    font-size: 8pt;
+    font-weight: bold;
+    color: #003c74;
+}
+.cbrFrmText
+{
+    font-size: 10pt;
+    border: #7F9DB9 1px solid;
+    color: #003c74;
+}
+/* end   tables ----------------*/

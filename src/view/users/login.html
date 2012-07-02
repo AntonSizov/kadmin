@@ -1,0 +1,66 @@
+{% extends "kadmin/index.html" %}
+{% block title %}Login Page{% endblock %}
+{% block css %}
+<link href="static/css/kadmin-login.css" type="text/css" rel="stylesheet"/>
+{% endblock %}
+{% block body %}
+<form method="post" id="Form1">
+<div class="cbrCtrl cbrLoginAdmin">
+    <table cellspacing="0" cellpadding="20" class="cbrControlHeader">
+      <tr>
+        <td>
+            <p>Login</p>
+        </td>
+      </tr>
+    </table>
+    <div class="cbrControlBody">
+        <div id="dvErrorMsg" class="cbrErrorMsgHuge">
+            {% if boss_flash %}{% for flash in boss_flash %}{{flash.message}}{% endfor %}{% endif %}
+        </div>
+        <div class="cbrForm">
+            <center>
+                <table cellspacing="0" cellpadding="5">
+                    <tr>
+                        <td class="cbrTblHeader" colspan="2">
+                            Login
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="left">
+                            User Name:
+                        </td>
+                        <td class="right">
+                            {% if login %}
+                            <input type="text" maxlength="500" name="login" id="LoginAdmin1_txtLogin" class="cbrFrmText" value="{{ login }}" />
+                            {% else %}
+                            <input type="text" maxlength="500" name="login" id="LoginAdmin1_txtLogin" class="cbrFrmText" />
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="left">
+                            Password:
+                        </td>
+                        <td class="right">
+                            <input type="password" maxlength="80" name="password" id="LoginAdmin1_txtPassword" class="cbrFrmText" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="left">
+                        </td>
+                        <td class="right">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cbrBtnRow" colspan="2">
+                            <input type="submit" name="LoginAdmin1$btnSubmit" value="Login" id="LoginAdmin1_btnSubmit" class="cbrFrmButton" />
+                        </td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+    </div>
+</div
+</form>
+
+{% endblock %}

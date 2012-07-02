@@ -1,0 +1,66 @@
+/* style class for month text */
+
+.MonthTitle 
+{
+	font-weight: bold;
+	font-size: 8pt;
+	color: #003CA5;
+	font-family: Verdana, Tahoma, Arial;
+	text-decoration: none;
+}
+
+/* style class for previous and next links */
+
+.PrevNextLinks
+{
+	font-size: 6pt;
+	padding: 6pt;
+}
+
+.PrevNextLinks A
+{
+	font-family: Verdana, Tahoma, Arial;
+}
+
+.PrevNextLinks A:visited
+{
+	font-size: 6pt;
+}
+
+/* style class for weekday name columns */
+
+.MonthDays
+{
+	font-size: 8pt;
+	color: #003ca5;
+	font-family: Verdana, Tahoma, Arial;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/* style class for actual day links on calendar */
+
+.Days 
+{
+	font-size: 6pt;
+	height: 18px;
+}
+
+.Days A
+
+{
+	font-size: 8pt;
+	color: #003CA5;
+	font-family: Verdana, Tahoma, Arial;
+	cursor: hand;
+
+}
+
+.Days A:visited
+{
+	font-size: 8pt;
+	color: #003CA5; 
+	font-family: Verdana, Tahoma, Arial;
+	cursor: hand;
+
+}

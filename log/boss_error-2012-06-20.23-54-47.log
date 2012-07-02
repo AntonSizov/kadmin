@@ -1,0 +1,140 @@
+
+=INFO REPORT==== 20-Jun-2012::23:54:47 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 20-Jun-2012::23:54:47 ===
+Starting master services on kadmin@natty
+
+=ERROR REPORT==== 20-Jun-2012::23:54:47 ===
+** Generic server boss_db_sup terminating 
+** Last message in was {'EXIT',<0.60.0>,eaddrinuse}
+** When Server state == {state,
+                            {local,boss_db_sup},
+                            one_for_one,
+                            [{child,<0.65.0>,db_controller,
+                                 {poolboy,start_link,
+                                     [[{name,{local,boss_db_pool}},
+                                       {worker_module,boss_db_controller},
+                                       {size,5},
+                                       {max_overflow,10},
+                                       {adapter,mock},
+                                       {cache_enable,false},
+                                       {shards,[]},
+                                       {is_master_node,true},
+                                       {db_host,"localhost"},
+                                       {db_port,1978}]]},
+                                 permanent,2000,worker,
+                                 [poolboy]}],
+                            undefined,10,10,[],boss_db_sup,
+                            [{adapter,mock},
+                             {cache_enable,false},
+                             {shards,[]},
+                             {is_master_node,true},
+                             {db_host,"localhost"},
+                             {db_port,1978}]}
+** Reason for termination == 
+** eaddrinuse
+
+=ERROR REPORT==== 20-Jun-2012::23:54:47 ===
+** Generic server boss_db_mock_sup terminating 
+** Last message in was {'EXIT',<0.60.0>,eaddrinuse}
+** When Server state == {state,
+                            {global,boss_db_mock_sup},
+                            one_for_one,
+                            [{child,<0.63.0>,db_mock_controller,
+                                 {boss_db_mock_controller,start_link,[[]]},
+                                 permanent,2000,worker,
+                                 [boss_db_mock_controller]}],
+                            undefined,10,10,[],boss_db_mock_sup,[]}
+** Reason for termination == 
+** eaddrinuse
+
+=ERROR REPORT==== 20-Jun-2012::23:54:47 ===
+** Generic server boss_session_sup terminating 
+** Last message in was {'EXIT',<0.60.0>,eaddrinuse}
+** When Server state == {state,
+                            {local,boss_session_sup},
+                            one_for_one,
+                            [{child,<0.75.0>,session_controller,
+                                 {poolboy,start_link,
+                                     [[{name,{local,boss_session_pool}},
+                                       {worker_module,boss_session_controller},
+                                       {size,20},
+                                       {max_overflow,40},
+                                       {adapter,boss_session_adapter_mock},
+                                       {session_exp_time,525600},
+                                       {session_key,"_boss_session"}]]},
+                                 permanent,2000,worker,
+                                 [poolboy]}],
+                            undefined,10,10,[],boss_session_sup,
+                            [{adapter,boss_session_adapter_mock},
+                             {session_exp_time,525600},
+                             {session_key,"_boss_session"}]}
+** Reason for termination == 
+** eaddrinuse
+
+=ERROR REPORT==== 20-Jun-2012::23:54:47 ===
+** Generic server boss_news_sup terminating 
+** Last message in was {'EXIT',<0.60.0>,eaddrinuse}
+** When Server state == {state,
+                            {global,boss_news_sup},
+                            one_for_one,
+                            [{child,<0.102.0>,news_controller,
+                                 {boss_news_controller,start_link,[[]]},
+                                 permanent,2000,worker,
+                                 [boss_news_controller]}],
+                            undefined,10,10,[],boss_news_sup,[]}
+** Reason for termination == 
+** eaddrinuse
+
+=ERROR REPORT==== 20-Jun-2012::23:54:47 ===
+** Generic server boss_mail_sup terminating 
+** Last message in was {'EXIT',<0.60.0>,eaddrinuse}
+** When Server state == {state,
+                            {local,boss_mail_sup},
+                            one_for_one,
+                            [{child,<0.104.0>,mail_controller,
+                                 {boss_mail_controller,start_link,
+                                     [[{driver,boss_mail_driver_smtp}]]},
+                                 permanent,2000,worker,
+                                 [boss_mail_controller]}],
+                            undefined,10,10,[],boss_mail_sup,
+                            [{driver,boss_mail_driver_smtp}]}
+** Reason for termination == 
+** eaddrinuse
+
+=ERROR REPORT==== 20-Jun-2012::23:54:47 ===
+** Generic server boss_mq_sup terminating 
+** Last message in was {'EXIT',<0.60.0>,eaddrinuse}
+** When Server state == {state,
+                            {global,boss_mq_sup},
+                            one_for_one,
+                            [{child,<0.98.0>,mq_controller,
+                                 {boss_mq_controller,start_link,
+                                     [[{adapter,boss_mq_adapter_bmq}]]},
+                                 permanent,2000,worker,
+                                 [boss_mq_controller]}],
+                            undefined,10,10,[],boss_mq_sup,
+                            [{adapter,boss_mq_adapter_bmq}]}
+** Reason for termination == 
+** eaddrinuse
+
+=ERROR REPORT==== 20-Jun-2012::23:54:47 ===
+** Generic server boss_session_mock_sup terminating 
+** Last message in was {'EXIT',<0.60.0>,eaddrinuse}
+** When Server state == {state,
+                            {global,boss_session_mock_sup},
+                            one_for_one,
+                            [{child,<0.73.0>,session_mock_controller,
+                                 {boss_session_mock_controller,start_link,
+                                     [[]]},
+                                 permanent,2000,worker,
+                                 [boss_session_mock_controller]}],
+                            undefined,10,10,[],boss_session_mock_sup,[]}
+** Reason for termination == 
+** eaddrinuse
+
+=INFO REPORT==== 20-Jun-2012::23:54:47 ===
+    application: boss
+    exited: {shutdown,{boss_app,start,[normal,[]]}}
+    type: temporary

@@ -1,0 +1,227 @@
+{% extends "kadmin/index.html" %}
+{% block title %}Manage administrators{% endblock %}
+{% block p_main_container %}
+
+                            <div id="pMainContainer" class="cbrPnlMainContainer">
+
+                            <div id="ctl17_pSearchArea" onkeypress="javascript:return FireDefaultButton(event, 'ctl17_btnSearch')">
+
+
+
+<table class="Info" id="Info" width="100%">
+    <tbody><tr>
+        <td>
+            Manage administrators
+        </td>
+    </tr>
+</tbody></table>
+    <p>
+        <span id="ctl17_lError" style="color:Red;"></span>
+    </p>
+    <p>
+        <table width="100%" class="SearchTable" cellspacing="2" cellpadding="2">
+            <tbody><tr class="SearchTableCell">
+                <td style="width: 180px">
+                    <form method="get" action="/kadmin_user/create" class="_no_class" style="margin-bottom: 0em;">
+                    <input type="submit" value="Add new admin" class="frmButton" style="height:20px;width:140px;">
+                    </form>
+                </td>
+                <td style="width: 45px" align="right">
+                    Name
+                </td>
+                <td style="width: 120px">
+                    <input type="text" maxlength="500" name="ctl17$txtName" id="ctl17_txtName" class="frmText" style="width:131px;">
+                </td>
+                <td align="right" style="width: 57px">
+                    Contact
+                </td>
+                <td style="width: 125px">
+                    <input type="text" maxlength="500" name="ctl17$txtContactData" id="ctl17_txtContactData" class="frmText" style="width:137px;">
+                </td>
+                <td align="center" style="width: 100px">
+                    <input type="submit" name="ctl17$btnSearch" value="Search" id="ctl17_btnSearch" class="frmButton">
+                </td>
+            </tr>
+        </tbody></table>
+    </p>
+    <p>
+
+<table class="EditTable" id="MainTable" cellspacing="0" cellpadding="6" width="100%">
+    <tbody><tr>
+        <td>
+            <div id="ctl17_recAdmins_pExport">
+
+                <table class="SearchTable" cellspacing="0" cellpadding="2" width="100%">
+                    <tbody><tr class="SearchTableCell">
+                        <td align="left">
+
+<table align="left" class="cbrExport">
+    <tbody><tr align="left">
+        <td style="width: 120px;" class="field">
+            <span id="ctl17_recAdmins_ucExportReport_TitleLabel">Export file type:</span>
+        </td>
+        <td>
+            <table id="ctl17_recAdmins_ucExportReport_rblExportTypes" border="0">
+                <tbody><tr>
+                    <td><input id="ctl17_recAdmins_ucExportReport_rblExportTypes_0" type="radio" name="ctl17$recAdmins$ucExportReport$rblExportTypes" value="CSV" checked="checked"><label for="ctl17_recAdmins_ucExportReport_rblExportTypes_0">CSV</label></td><td><input id="ctl17_recAdmins_ucExportReport_rblExportTypes_1" type="radio" name="ctl17$recAdmins$ucExportReport$rblExportTypes" value="XLS"><label for="ctl17_recAdmins_ucExportReport_rblExportTypes_1">XLS</label></td><td><input id="ctl17_recAdmins_ucExportReport_rblExportTypes_2" type="radio" name="ctl17$recAdmins$ucExportReport$rblExportTypes" value="PDF"><label for="ctl17_recAdmins_ucExportReport_rblExportTypes_2">PDF</label></td><td><input id="ctl17_recAdmins_ucExportReport_rblExportTypes_3" type="radio" name="ctl17$recAdmins$ucExportReport$rblExportTypes" value="RTF"><label for="ctl17_recAdmins_ucExportReport_rblExportTypes_3">RTF</label></td>
+                </tr>
+            </tbody></table>
+        </td>
+        <td>
+            <input type="submit" name="ctl17$recAdmins$ucExportReport$btnExport" value="Export report" id="ctl17_recAdmins_ucExportReport_btnExport" class="cbrFrmButton">
+        </td>
+    </tr>
+
+</tbody></table>
+<input type="hidden" id="path2File" value="">
+<script type="text/javascript" language="javascript">
+    function OpenFile(fileName) {
+        var hiddenField = document.getElementById("path2File");
+        hiddenField.value = fileName;
+        var w = window.open('/mmwl_linux/UI/Reports/DownloadReportFileWindow/DownloadReportFile.html', "_blank", "height=300, width=400");
+        w.moveTo(screen.width / 2 - 200, screen.height / 2 - 150)
+    }
+</script>
+
+                        </td>
+                        <td align="right">
+                            Rows
+                            <select name="ctl17$recAdmins$ddlGridPageSizes" onchange="setTimeout('__doPostBack(\'ctl17$recAdmins$ddlGridPageSizes\',\'\')', 0)" id="ctl17_recAdmins_ddlGridPageSizes" class="frmText" style="width:75px;">
+                <option value="10">10</option>
+                <option selected="selected" value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+
+            </select>
+                        </td>
+                    </tr>
+                </tbody></table>
+
+        </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="ctl17_recAdmins_pGrid">
+
+                <table class="Grid" cellpadding="0" cellspacing="0" rules="cols" align="center" border="1" id="ctl17_recAdmins_grdData" style="border-style:None;height:112px;width:100%;border-collapse:collapse;">
+                    <tbody><tr class="HeaderRow">
+                        <td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl01$ctl00','')">Name</a></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl01$ctl03','')">Contact</a></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl01$ctl04','')">State</a></td><td>&nbsp;</td>
+                    </tr><tr class="GridRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=9b49adfe-9eda-4390-9e53-5de66315a984">el</a></td><td align="left"><span></span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl02$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridAlternativeRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=9ab3dc8f-7ce4-42cb-8df7-a2191a639ff4">DDFR790</a></td><td align="left"><span>asd@asd.asd</span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl03$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=fd85c48e-a38a-4af6-a99b-20808bad46ef">admin2</a></td><td align="left"><span></span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl04$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridAlternativeRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=15969e32-3dae-444d-8839-2e4616c0bcd5">admin23</a></td><td align="left"><span></span></td><td><span style="color:Red;">Deactivated</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl05$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=4f475e01-c344-4fd8-952e-217c91056fb4">admin321</a></td><td align="left"><span></span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl06$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridAlternativeRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=2b6dac44-b828-4140-9a1f-f7fec5e90a42">admin123_1</a></td><td align="left"><span></span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl07$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=51493bae-ae92-c541-83b0-6f33f1fd57b9">admin123_3</a></td><td align="left"><span></span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl08$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridAlternativeRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=1648d913-4c2f-4062-91ac-9757023e9daf">admin123</a></td><td align="left"><span></span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl09$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=01342f31-3eb4-4e30-95ba-eca0ca260403">admini</a></td><td align="left"><span></span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl10$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridAlternativeRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=224be6e7-015a-4d95-ad47-4bc3dd7a2cc1">admin404</a></td><td align="left"><span></span></td><td><span style="color:Red;">Deactivated</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl11$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=12ccaf1b-9b92-4052-9a0f-7b9901a71289">admins1279</a></td><td align="left"><span>1279</span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl12$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridAlternativeRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=8b65ed8d-433d-4db0-8888-6281097dee12">Admin01</a></td><td align="left"><span></span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl13$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=b5bef5ab-dbb7-4bd8-8793-2b47921c8693">Admin1279</a></td><td align="left"><span></span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl14$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridAlternativeRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=1a86391f-7fc3-44ff-9301-f4d19bda06b2">Admin123</a></td><td align="left"><span></span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl15$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=2605b879-9558-41fb-9b37-2ecdc96d3306">Admin111</a></td><td align="left"><span></span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl16$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridAlternativeRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=3df5ece5-3e02-4519-8f3f-00351b7a4b4c">Nsupervisor</a></td><td align="left"><span>375296888999</span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl17$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=14bffdc7-1945-4314-85f9-2279dc7e5777">dimac</a></td><td align="left"><span>375296998798</span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl18$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridAlternativeRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=5410bc5f-3c40-4559-98d4-632f21d1244e">igor</a></td><td align="left"><span></span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl19$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=3a5da789-cb5d-4030-8a83-9e17595ab3a0">asd</a></td><td align="left"><span></span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl20$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr><tr class="GridAlternativeRow">
+                        <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=ad237e52-92c3-462d-a944-f00d09b2c502">olga1</a></td><td align="left"><span></span></td><td><span style="color:Red;">Deactivated</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl21$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td>
+                    </tr>
+                    <tr class="GridPaging">
+                        <td colspan="6">
+                            <!-- <span>1</span>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl01','')">2</a>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl02','')">3</a>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl03','')">4</a>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl04','')">5</a>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl05','')">6</a>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl06','')">7</a>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl07','')">8</a>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl08','')">9</a>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl09','')">10</a> -->
+                        </td>
+                    </tr>
+                </tbody></table>
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="ctl17_recAdmins_pTotals">
+
+                <table class="cbrTableForm" cellpadding="3" cellspacing="1">
+                    <colgroup>
+                        <col width="25%">
+                        <col width="75%">
+                    </colgroup>
+
+                            <tbody><tr>
+                                <td class="field">
+                                    Total rows :
+                                </td>
+                                <td class="field">
+                                {{ total_rows }}
+                                </td>
+                            </tr>
+
+                </tbody></table>
+
+            </div>
+        </td>
+    </tr>
+</tbody></table>
+
+
+    </p>
+
+        </div>
+
+    </div>
+                            <div id="pHelp" class="cbrPnlHelpContainer">
+
+
+<p>
+    <p></p><table class="Help" width="100%" cellpadding="3">
+        <tbody>
+            <tr>
+                <td class="HelpCell">
+                    <p align="justify">Help: This is a list of administrators. Administrators can be
+                        created and modified here. You can assign privileges to different
+                        administrators.<br>
+                    </p>
+                </td>
+
+                </tr>
+            <tr>
+                <td class="HelpCell" align="left">
+
+
+
+
+<p> Please note, that you can supply search meta-symbol '%' in
+the search fields. '%'&nbsp;can be located anywhere in the string
+and stands for 'any other symbols can be here'. Example: 'sampl%' will
+find all the records with words like 'sampling', 'samples', 'sampled',
+etc.</p>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</p>
+
+    </div>
+{% endblock %}

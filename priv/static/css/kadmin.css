@@ -1,0 +1,1298 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    background-position: 0;
+    background-image: url('../images/background.gif');
+    background-color: #FFFFFF;
+    font-size: 10pt;
+    font-family: "arial" , sans-serif;
+}
+.Title
+{
+    font-weight: bolder;
+    background-color: #d9e1e6;
+}
+.LogOff
+{
+    font-size: x-small;
+    color: #003c74;
+    font-weight: bolder;
+}
+.Title1
+{
+    font-weight: bolder;
+    background-color: #d9e1e6;
+}
+.Footer
+{
+    font-weight: bolder;
+    background-color: #d9e1e6;
+}
+
+A.CommandActive
+{
+    font-weight: bold;
+    font-size: 8pt;
+    color: #FF0000;
+    background: white;
+    font-family: Verdana, Tahoma, Arial;
+    height: 100%;
+    width: 100%;
+    border-right: #006666 1px solid;
+    border-top: #006666 1px solid;
+    border-bottom: #006666 1px solid;
+    border-left: #006666 1px solid;
+}
+
+A.hMenu
+{
+    font-weight: normal;
+    font-size: 8pt;
+    text-decoration: none;
+    color: #003c74;
+    font-family: Verdana, Tahoma, Arial;
+    padding: 2px;
+    margin: 3px;
+    height: "100%";
+}
+
+A:hover.hMenu
+{
+    padding: 2px;
+    margin: 2px;
+    background-position: center center;
+    border: 1px solid #006666;
+    background: #d9e1e6;
+    color: #ff0000;
+    font-family: Verdana, Arial, Tahoma;
+    text-decoration: none;
+}
+
+A.hMenu.visited
+{
+    text-decoration: underline;
+}
+
+.hMenuNotLink
+{
+    font-weight: bold;
+    font-size: 8pt;
+    background-position: center center;
+    border: 1px solid #006666;
+    background: #FFFFFF;
+    text-decoration: none;
+    color: #003c74;
+    font-family: Verdana, Tahoma, Arial;
+    padding: 2px;
+    margin: 3px;
+    height: "100%";
+}
+
+A.Command
+{
+    font-weight: bold;
+    font-size: 8pt;
+    text-decoration: none;
+    color: #003c74;
+    font-family: Verdana, Tahoma, Arial;
+    height: 100%;
+    width: 100%;
+}
+A:hover.Command
+{
+    border-right: #006666 1px solid;
+    border-top: #006666 1px solid;
+    font-size: 8pt;
+    background: #d9e1e6;
+    border-left: #006666 1px solid;
+    color: #ff0000;
+    border-bottom: #006666 1px solid;
+    font-family: Verdana, Arial, Tahoma;
+    text-decoration: none;
+}
+
+A:visited
+{
+    font-family: Verdana, Arial, Tahoma;
+    font-size: 8pt;
+    color: #003C74;
+    text-decoration: underline;
+}
+.LeftPanel
+{
+    color: #0000cc;
+    background-color: #ecf1f4;
+}
+.RightPanel
+{
+    color: #0000cc;
+    background-color: #ecf1f4;
+}
+.Grid
+{
+    padding-right: 6px;
+    padding-left: 6px;
+    font-size: 8pt;
+    padding-bottom: 6px;
+    color: #22607f;
+    padding-top: 6px;
+    font-family: Tahoma, Verdana, Arial;
+}
+
+.GridRed
+{
+    padding-right: 6px;
+    padding-left: 6px;
+    font-size: 8pt;
+    padding-bottom: 6px;
+    color: Red;
+    padding-top: 6px;
+    font-family: Tahoma, Verdana, Arial;
+}
+A.GridLink
+{
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 8pt;
+    color: #000099;
+}
+
+A:hover.GridLink
+{
+    color: Red;
+}
+.GridRow
+{
+}
+.GridRowSelected
+{
+    background-color: #ffcc99;
+}
+.GridAlternativeRow
+{
+    background-color: #f1f9ff;
+}
+
+.GridAlternativeRow td, .GridRow td
+{
+    height: 25px;
+    padding-left: 10px;
+}
+
+.HeaderRow
+{
+    font-weight: bold;
+    font-size: 8pt;
+    background: url('../images/tblheader_bg.gif');
+    color: #003c74;
+    font-family: Verdana, Tahoma, Arial;
+    height: 5px;
+    text-align: center;
+}
+
+.HeaderRow TH
+{
+    text-align: center;
+}
+
+.HeaderRow a
+{
+    font-weight: bold;
+    font-size: 8pt;
+    color: #003c74;
+    font-family: Verdana, Tahoma, Arial;
+}
+
+
+.HeaderRow td
+{
+    text-align: center;
+    height: 25px;
+    padding: 6px;
+}
+
+.FooterRow
+{
+    font-weight: bold;
+    font-size: 8pt;
+    background: url('../images/tblfooter_bg.gif');
+    color: #003c74;
+    font-family: Verdana, Tahoma, Arial;
+    height: 5px;
+    text-align: center;
+}
+.GridPaging
+{
+    font-family: Verdana, Tahoma, Arial;
+    background: url('../images/tblfooter_bg.gif');
+    color: #003C74;
+    font-size: 8pt;
+    font-weight: bold;
+    height: 5px;
+}
+
+.GridPaging span
+{
+    color: #003C74;
+    font-family: Verdana, Tahoma, Arial;
+    color: #003C74;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+.GridPaging a
+{
+    color: #003C74;
+    font-family: Verdana, Tahoma, Arial;
+    color: #003C74;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+.GridPaging td
+{
+    height: 25px;
+    padding: 6px;
+}
+
+.GridPaging span, .GridPaging a
+{
+    padding: 0 1px 0 1px;
+}
+
+.Warning
+{
+    font-weight: bolder;
+    color: red;
+}
+.CardCommandLine
+{
+    font-weight: bolder;
+    color: #3300cc;
+    border-bottom: dodgerblue 1px solid;
+}
+.CardCommand
+{
+    font-weight: bolder;
+    color: #3300cc;
+}
+.SortedColumnHeader
+{
+    font-weight: bolder;
+    background-color: darkblue;
+    text-align: center;
+    color: aqua;
+}
+.test
+{
+    border-top: blue 1px solid;
+}
+.NavigatorSplitter
+{
+    border-bottom: dodgerblue 1px solid;
+}
+.SearchTable
+{
+    border: solid 1px #7F9DB9;
+}
+
+.MMSearchTable
+{
+    border: solid 1px #7F9DB9;
+    color: #22607F;
+    font-family: Tahoma,Verdana,Arial;
+    font-size: 8pt;
+}
+
+.SearchTableCell
+{
+    font-family: Tahoma, Verdana, Arial;
+    font-size: 8pt;
+    color: #22607F;
+    background-color: #FFFFFF;
+}
+
+.LoginTable
+{
+    border: solid 1px #7F9DB9;
+}
+
+.LoginTableHeader
+{
+    font-family: Verdana, Tahoma, Arial;
+    background: url('../images/tblheader_bg.gif');
+    color: #003C74;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+.EditTable
+{
+    border: solid 1px #7F9DB9;
+}
+.EditTable strong
+{
+    font-size: 8pt;
+    color: #22607F;
+}
+
+.CRMTable span
+{
+    font-size: 8pt;
+}
+
+.MMEditTable
+{
+    border: solid 1px #7F9DB9;
+    color: #22607F;
+    font-family: Tahoma,Verdana,Arial;
+    font-size: 8pt;
+}
+
+.frmButton
+{
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 8pt;
+    font-weight: bold;
+    color: #22607F;
+}
+
+.frmText
+{
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 10pt;
+    color: #22607F;
+    border: #7F9DB9 1px solid;
+}
+
+.Navigator
+{
+    border-right: #d9e1e6 1px solid;
+    padding-right: 0px;
+    border-top: #d9e1e6 1px solid;
+    padding-left: 0px;
+    padding-bottom: 2px;
+    border-left: #d9e1e6 1px solid;
+    color: #0000cc;
+    padding-top: 2px;
+    border-bottom: #d9e1e6 1px solid;
+    background-color: #ecf1f4;
+}
+.NavigatorLog
+{
+    border-right: #d9e1e6 1px solid;
+    padding-right: 0px;
+    border-top: #d9e1e6 1px solid;
+    padding-left: 0px;
+    padding-bottom: 1px;
+    border-left: #d9e1e6 1px solid;
+    color: #0000cc;
+    padding-top: 1px;
+    border-bottom: #d9e1e6 1px solid;
+    background-color: #ecf1f4;
+}
+
+.NavigatorCell
+{
+    height: 30px;
+}
+.NavigatorLogCell
+{
+    height: 15px;
+}
+
+.NavigatorHeader
+{
+    font-weight: bolder;
+    font-size: 9pt;
+    color: #000000;
+    font-family: Verdana, Tahoma, Arial;
+    background-color: #d9e1e6;
+}
+.Info
+{
+    font-family: Arial, Tahoma, Verdana;
+    color: #003C74;
+    font-size: 13pt;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom-style: dotted;
+    border-bottom-color: #003C74;
+    border-bottom-width: 1px;
+    width: 100%;
+}
+
+.InfoOld
+{
+    font-weight: bold;
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 13pt;
+    font-family: Arial, Tahoma, Verdana;
+    color: #003C74;
+    font-size: 12pt;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom-style: dotted;
+    border-bottom-color: #003C74;
+    border-bottom-width: 1px;
+    width: 100%;
+}
+
+.SubInfo
+{
+    font-weight: bold;
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 11pt;
+    color: #003C74;
+}
+
+.Help
+{
+    border-right: #d9e1e6 1px solid;
+    border-top: #d9e1e6 1px solid;
+    border-left: #d9e1e6 1px solid;
+    border-bottom: #d9e1e6 1px solid;
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 10pt;
+    color: #22607F;
+    background-color: white;
+}
+
+/* //////////////////////////////////////////////////////////////
+Table Classes
+///////////////////////////////////////////////////////////////*/
+
+.tblPageHeader
+{
+    font-family: Tahoma, Verdana, Arial;
+    background: url('../images/tblpageheader_bg.gif');
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.tblHeader
+{
+    font-family: Verdana, Tahoma, Arial;
+    background: url('../images/tblheader_bg.gif');
+    color: #003C74;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+.tblDarkCell
+{
+    font-family: Tahoma, Verdana, Arial;
+    font-size: 8pt;
+    background-color: #C2D0D5;
+}
+
+.tblCell
+{
+    font-family: Tahoma, Verdana, Arial;
+    font-size: 8pt;
+    color: #22607F;
+    background-color: #FFFFFF;
+}
+
+.tblBorder
+{
+    border: solid 1px #7F9DB9;
+}
+
+.fntSmallText
+{
+    font-family: Tahoma, Verdana, Arial;
+    font-size: 8pt;
+    color: #22607F;
+}
+
+.frmRowsCountText
+{
+    font-weight: bold;
+    font-size: 7pt;
+    color: #22607f;
+    font-family: Verdana, Tahoma, Arial;
+}
+
+.TabsItem
+{
+    border: solid 1px #7F9DB9;
+    background-color: #d9e1e6;
+    font-family: Tahoma, Verdana, Arial;
+    font-size: 8pt;
+    width: 80px;
+    text-align: center;
+}
+
+.TabsItemSelected
+{
+    border: none;
+    background-color: #d9e1e6;
+    font-family: Tahoma, Verdana, Arial;
+    font-size: 8pt;
+    font-weight: bold;
+    width: 80px;
+    text-align: center;
+}
+
+.TabsItem A, .TabsItem A:visited, .TabsItemSelected A, .TabsItemSelected A:visited
+{
+    text-decoration: none;
+    color: #003c74;
+}
+
+.TabsItem A:hover
+{
+    color: #FF0000;
+}
+
+.TabsHeader
+{
+    width: 100%;
+    height: 10px;
+    background-color: #d9e1e6;
+}
+
+.TabsContainer
+{
+    border-left: solid 1px #d9e1e6;
+    border-right: solid 1px #d9e1e6;
+    background-color: #FFFFFF;
+    padding: 5px;
+}
+
+.BlueContainer
+{
+    background-color: #d9e1e6;
+    padding: 5px;
+    border: 1px solid #7F9DB9;
+}
+
+#PaymentResultContainer
+{
+    margin: 160px 300px 200px 300px;
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 10pt;
+    color: #22607F;
+}
+
+#PaymentResultHeader
+{
+    font-weight: bold;
+    border-bottom: 2px solid #7F9DB9;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 12pt;
+}
+
+.PaymentResultDetails
+{
+    font-weight: bolder;
+    padding: 10px 0px 10 px 0px;
+}
+
+.PaymentResultDetails div
+{
+    padding: 5px 0px 5px 0px;
+}
+
+th
+{
+    text-align: left;
+    font-family: Arial, Tahoma, Verdana;
+    color: #003C74;
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+.ResetPasswordLink
+{
+    text-decoration: underline;
+    cursor: hand;
+}
+
+.NumberStyle
+{
+    text-align: right;
+}
+
+.dialog
+{
+    position: absolute;
+    width: 340px;
+    padding: 5px;
+    z-index: 2000;
+    background: black;
+}
+
+.dialog-mask
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    width: 100%;
+    background: #FFF;
+    opacity: .50;
+    filter: alpha(opacity=50);
+    z-index: 1000;
+}
+
+.AlertTable
+{
+    width: 100%;
+    padding: 3px;
+    margin: 3px;
+    border: solid 1px #7F9DB9;
+}
+
+.AlertTableHeader
+{
+    font-family: Verdana, Tahoma, Arial;
+    background: url('../images/tblheader_bg.gif');
+    color: #003C74;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+.AlertTableContentRow
+{
+    vertical-align: top;
+    font-family: Tahoma, Verdana, Arial;
+    font-size: 8pt;
+    color: #22607F;
+    background-color: #FFFFFF;
+}
+
+.AlertTableButtomRow
+{
+    text-align: right;
+    font-family: Tahoma, Verdana, Arial;
+    font-size: 8pt;
+    color: #22607F;
+    background-color: #FFFFFF;
+}
+
+.SubscrInfoMain
+{
+    background-color: white;
+}
+
+.SubscrInfoItem
+{
+    clear: both;
+}
+
+.SubscrInfoItemFirst
+{
+    float: left;
+    font-weight: bold;
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 10pt;
+    color: #003C74;
+    background-color: white;
+}
+
+.SubscrInfoItemSecond
+{
+    margin-left: 260px;
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 10pt;
+    color: #22607F;
+}
+
+.SubscrInfoItemUL
+{
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 10pt;
+    color: #22607F;
+}
+
+.SubscrInfoItemGrid
+{
+    clear: both;
+    border: solid 1px #7F9DB9;
+}
+
+.2WayMsisdnCategoryName
+{
+    margin-left: 20px;
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 10pt;
+    color: #003C74;
+}
+
+.2WayMsisdnItems
+{
+    margin-left: 20px;
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 10pt;
+}
+
+.2WayMsisdnItems textarea
+{
+    height: 64px;
+    width: 50%;
+    color: #003C74;
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.2WayMsisdnItems select
+{
+    height: 64px;
+    width: 238px;
+    color: #003C74;
+    font-family: Verdana, Tahoma, Arial;
+    font-size: 10pt;
+    font-weight: bold;
+}
+/*---------------------------------------------------------------------*/
+body
+{
+    margin: 0;
+    padding: 0;
+    background-position: 0;
+    background: #fff url('../images/background.gif') repeat;
+    font-size: 10pt;
+    font-family: Tahoma,Verdana, Arial;
+    color: #003c74;
+    width: 100%;
+}
+a
+{
+    color: #003c74;
+}
+.cbrErrorMsg, .cbrErrorMsgHuge
+{
+    width: 100%;
+    /*float: left; Fix 16170*/
+    clear: both;
+    text-align: center;
+    color: Red;
+    font-size: 1em;
+}
+.cbrErrorMsgHuge
+{
+    padding: 10px 0px;
+    font-size: 1.2em;
+}
+/* begin uctrl--------- ------*/
+.cbrCtrl, .cbrCtrl .cbrControlBody, .cbrCtrl .cbrControlHeader
+{
+    float: left;
+    clear: both;
+    width: 100%;
+}
+.cbrCtrl .cbrControlHeader p
+{
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #7F9DB9;
+    font-family: Arial, Tahoma, Verdana;
+    font-size: 13pt;
+    font-weight: bold;
+}
+/* end uctrl ------------------*/
+/* begin PageHeader.ascx ------*/
+.cbrPageHeader, .cbrPageHeader .cbrPageTop, .cbrPageHeader .cbrLoggedOn
+{
+    float: left;
+    clear: both;
+    width: 100%;
+}
+.cbrPageHeader
+{
+    background: #fff url('../images/header-line.png') repeat-x left 46px;
+}
+.cbrPageHeader .cbrPageTop
+{
+    height: 50px;
+    background: url('../images/header.jpg') no-repeat top left;
+}
+.cbrPageHeader .cbrPageTop table
+{
+    width: 100%;
+    border: none;
+}
+.cbrPageHeader .cbrLoggedOn
+{
+    float: left;
+    clear: both;
+    width: 100%;
+}
+.cbrPageHeader .cbrLoggedOn
+{
+    background-color: #d9e1e6;
+    padding: 5px 0px;
+}
+.cbrPageHeader .cbrLoggedOn td
+{
+    font-weight: bold;
+    font-size: 0.8em;
+}
+#defLoginError
+{
+    color: Red;
+}
+/* end   PageHeader.ascx ------*/
+/* begin LoginAdmin.ascx ------*/
+.cbrLoginAdmin .cbrControlBody
+{
+    height: 300px;
+    border: 0px;
+}
+.cbrLoginAdmin .cbrErrorMsgHuge
+{
+    height: 40px;
+}
+.cbrLoginAdmin .cbrForm
+{
+    clear: both;
+    float: left;
+    width: 100%;
+}
+.cbrLoginAdmin .cbrForm table
+{
+    width: 430px;
+    border-collapse: collapse;
+    border: solid 1px #7F9DB9;
+    font-size: 8pt;
+    color: #003c74;
+    background: #fff;
+}
+.cbrLoginAdmin .cbrForm .left
+{
+    width: 80px;
+}
+.cbrLoginAdmin .cbrForm .right
+{
+    width: 350px;
+}
+.cbrLoginAdmin .cbrForm .cbrBtnRow
+{
+    text-align: right;
+}
+.cbrLoginAdmin .cbrForm .cbrFrmText
+{
+    width: 100%;
+}
+/* end   LoginAdmin.ascx ------*/
+/* begin PageFooter.ascx ------*/
+.cbrPageFooter
+{
+    border-top: 1px dotted #7F9DB9;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+.cbrPageFooter .copyrights, .cbrPageFooter .pmm
+{
+    float: left;
+    clear: both;
+    width: 100%;
+}
+.cbrPageFooter .copyrights
+{
+    text-align: center;
+    font-size: 0.9em;
+}
+.cbrPageFooter .pmm
+{
+    text-align: right;
+}
+/* end   PageFooter.ascx ------*/
+/*begin default.aspx ----------*/
+.cbrPageContainer
+{
+    float: left;
+    clear: both;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+}
+.cbrPnlNavigator, .cbrPnlHelpContainer, .cbrPnlNavigator .accessLevel, .cbrPnlNavigator .accessLevel .navHeader, .cbrPnlNavigator .accessLevel .navBody
+{
+    float: left;
+    clear: both;
+    width: 100%;
+}
+.cbrPnlMainContainer
+{
+    clear: both;
+    width: 100%;
+}
+.cbrPnlNavigator
+{
+    width: 200px;
+    margin-left: 5px;
+}
+.cbrPnlMainContainer, .cbrPnlHelpContainer
+{
+    width: 99%;
+    padding-left: 5px;
+}
+.cbrPnlHelpContainer
+{
+    padding-top: 10px;
+}
+.cbrPnlNavigator .accessLevel
+{
+    margin: 3px 0px;
+    border: #d9e1e6 1px solid;
+    color: #0000cc;
+    background: #ecf1f4;
+}
+.cbrPnlNavigator .accessLevel .navHeader
+{
+    font-weight: bold;
+    font-size: 9pt;
+    color: #000;
+    background: #d9e1e6;
+    font-family: Verdana,Tahoma, Arial;
+    padding: 2px 0px;
+    width: 100%;
+}
+.cbrPnlNavigator .accessLevel .navHeader img
+{
+    cursor: pointer;
+}
+.cbrPnlNavigator .accessLevel .navBody a
+{
+    float: left;
+    width: 199px;
+    line-height: 15px;
+    margin: 1px 0px;
+    padding: 5px 0px;
+    background: transparent;
+}
+.Help
+{
+    border: solid 1px #d9e1e6;
+    font-size: 10pt;
+    color: #003c74;
+    background: #fff;
+}
+a.Command, a.CommandAlternate, a.CommandActive
+{
+    font-weight: bold;
+    font-size: 8pt;
+    text-decoration: none;
+    color: #003c74;
+    height: 100%;
+    width: 100%;
+    font-family: Verdana, Tahoma, Arial;
+    border: transparent 1px solid;
+}
+a.CommandActive
+{
+    background: white !important;
+    border: #006666 1px solid;
+    text-decoration: none !important;
+}
+a:hover.Command, a:hover.CommandAlternate
+{
+    border: #006666 1px solid;
+    font-size: 8pt;
+    color: #ff0000;
+    background: #d9e1e6 !important;
+}
+/*end   default.aspx ----------*/
+/* begin uctrlEdit ------------*/
+.cbrCtrlEdit .cbrHeaderBlock, .cbrCtrlEdit .cbrHeaderBlock .cbrControlHeader, .cbrCtrlEdit .cbrHeaderBlock .cbrHeaderBody, .cbrCtrlEdit .cbrBlock, .cbrCtrlEdit .cbrInfoBlock, .cbrCtrlEdit .cbrBodyBlock .cbrButtonBlock .cbrCtrlEdit .cbrBodyBlock .fntSmallText
+{
+    width: 100%;
+    clear: both;
+    float: left;
+}
+.cbrCtrlEdit .cbrHeaderBlock .cbrControlNav
+{
+    float: left;
+    width: 100%;
+}
+.cbrCtrlEdit .cbrBodyBlock, .cbrCtrlEdit
+{
+    clear: both;
+    width: auto;
+}
+.cbrCtrlEdit .cbrHeaderBlock .cbrControlHeader, .cbrSubHeader
+{
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #7F9DB9;
+    font-weight: bold;
+    font-size: 1em;
+    color: #003C74;
+}
+.cbrSubHeader
+{
+    padding-bottom: 5px;
+    margin: 10px 0px;
+    font-size: 0.9em;
+}
+.cbrCtrlEdit .cbrHeaderBlock .cbrControlNav
+{
+    padding: 5px 0px;
+    border: 1px solid #d9e1e6;
+    background: #ecf1f4;
+}
+.cbrCtrlEdit .cbrHeaderBlock .cbrControlNav a
+{
+    float: left;
+    width: auto;
+    line-height: 15px;
+    margin: 0px 5px;
+    padding: 5px;
+    background: transparent;
+}
+.cbrCtrlEdit .cbrInfoBlock
+{
+    margin: 10px 0px;
+    font-size: 8pt;
+    color: #22607F;
+    background: #fff;
+    border: 1px solid #7F9DB9;
+}
+.cbrCtrlEdit .cbrInfoBlock .field
+{
+    width: 150px;
+    font-weight: bold;
+}
+.cbrCtrlEdit .cbrButtonBlock
+{
+    margin: 10px 0px;
+}
+.cbrCtrlEdit .fntSmallText
+{
+    font-size: 8pt;
+    color: #22607F;
+    margin: 5px 0px;
+    padding: 10px;
+    width: auto !important;
+    background: #fff;
+    border: 1px solid #7F9DB9;
+}
+/* end uctrlEdit --------------*/
+/* begin tables ----------------*/
+.cbrExport, .cbrExport td
+{
+    font-size: 8pt;
+}
+.cbrTable, .cbrTableForm, .cbrGrid, .cbrTableParent
+{
+    width: 100%;
+    border: solid 1px #7F9DB9;
+}
+.cbrTableParent, .cbrTableForm
+{
+    background: #f3f3f3 !important;
+}
+.cbrTable, .cbrTableParent, .cbrTableForm
+{
+    background: #fff;
+    font-size: 8pt;
+    color: #003c74;
+    margin: 5px 0px;
+}
+.cbrTable label, .cbrTableParent label, .cbrTableForm label
+{
+    font-size: 8pt;
+}
+.cbrTableForm td
+{
+    background: #fff;
+}
+.cbrTable td.field, .cbrTableForm td.field
+{
+    font-weight: bold;
+    font-size: 8pt;
+    color: #003c74;
+}
+.cbrTblHeader
+{
+    background: url('../images/tblheader_bg.gif') !important;
+    font-size: 8pt;
+    font-weight: bold;
+    text-align: left;
+    overflow: hidden;
+    height: 13px;
+}
+.cbrFrmButton
+{
+    font-size: 8pt;
+    font-weight: bold;
+    color: #003c74;
+}
+.cbrFrmText
+{
+    font-size: 10pt;
+    border: #7F9DB9 1px solid;
+    color: #003c74;
+}
+.cbrGrid
+{
+    font-size: 8pt;
+    color: #22607f;
+}
+.cbrGridRed
+{
+    font-size: 8pt;
+    color: Red;
+}
+.cbrGridRow
+{
+    background: #fff;
+}
+.cbrGridAlternativeRow
+{
+    background: #f3f3f3;
+}
+.cbrGridRow td, .cbrGridAlternativeRow td, .cbrGridRowSelected td
+{
+    padding: 5px;
+    border-bottom: none;
+    border-top: none;
+}
+.cbrGridRowSelected
+{
+    background: #ffcc99;
+}
+a.cbrGridLink
+{
+    font-size: 8pt;
+    color: #003c74;
+}
+a.cbrGridLink:hover
+{
+    color: Red;
+}
+.cbrHeaderRow td
+{
+    text-align: center;
+    color: #003c74;
+    font-weight: bold;
+    font-size: 8pt;
+    background: url('../images/tblheader_bg.gif');
+    height: 13px;
+    padding: 6px;
+    overflow: hidden;
+}
+.cbrHeaderRow TH
+{
+    text-align: center;
+}
+.cbrHeaderRow a
+{
+    font-weight: bold;
+    font-size: 8pt;
+    color: #003c74;
+    font-family: Verdana, Tahoma, Arial;
+}
+.cbrGridPaging
+{
+    background: url('../images/tblfooter_bg.gif');
+}
+.cbrGridPaging td
+{
+    color: #003C74;
+    font-size: 8pt;
+    font-weight: bold;
+    height: 13px;
+    padding: 6px;
+}
+.cbrGridPaging span
+{
+    color: #003C74;
+    font-size: 8pt;
+    font-weight: bold;
+}
+.cbrGridPaging a
+{
+    color: #003C74;
+    font-size: 8pt;
+    font-weight: bold;
+}
+.cbrFooterRow
+{
+    font-weight: bold;
+    font-size: 8pt;
+    background: url('../images/tblfooter_bg.gif');
+    color: #003c74;
+    font-family: Verdana, Tahoma, Arial;
+    text-align: center;
+}
+/* end   tables ----------------*/
+
+/*begin hello.ascx ------------*/
+.cbrHello .nameError, .cbrHello .warning, .cbrHello .pnlWarning, .cbrHello .pnlChangePwd
+{
+    clear: both;
+    float: left;
+    width: 100%;
+}
+.cbrHello .nameError, .cbrHello .warning
+{
+    color: Red;
+    text-align: center;
+    padding: 5px 0px;
+}
+.cbrHello .warning
+{
+    font-size: 0.9em;
+}
+.cbrHello
+{
+    font-weight: bold;
+    color: red;
+}
+/*end   hello.ascx ------------*/
+
+/* MessageBoxes   
+----------------------------------------------------------*/
+.messagebox-body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.messagebox-info, .messagebox-success, .messagebox-warning, .messagebox-error
+{
+    border: 1px solid;
+    margin: 10px 0px;
+    padding: 5px 5px 5px 42px;
+    min-height: 32px;
+    height: auto !important;
+    height: 44px;
+}
+
+.messagebox-info
+{
+    color: #00529B;
+    background: #BDE5F8 url('../images/MessageBoxes/messagebox-info.png') top left no-repeat;
+    background-position: 5px 5px;
+}
+
+.messagebox-success
+{
+    color: #4F8A10;
+    background: #DFF2BF url('../images/MessageBoxes/messagebox-success.png') top left no-repeat;
+    background-position: 5px 5px;
+}
+.messagebox-warning
+{
+    color: #9F6000;
+    background: #FEEFB3 url('../images/MessageBoxes/messagebox-warning.png') top left no-repeat;
+    background-position: 5px 5px;
+}
+
+.messagebox-error
+{
+    color: #D63301;
+    background: #FFCCBA url('../images/MessageBoxes/messagebox-error.png') top left no-repeat;
+    background-position: 5px 5px;
+}
+
+.image-binary-SMS
+{    
+    vertical-align: middle;
+}

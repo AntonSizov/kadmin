@@ -1,0 +1,435 @@
+2012-06-21 03:10:05.211 [debug] <0.142.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-06-21 03:10:05.224 [debug] <0.144.0> Lager installed handler error_logger_lager_h into error_logger
+2012-06-21 03:10:05.224 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-06-21 03:10:05.262 [debug] <0.148.0> Supervisor inets_sup started ftp_sup:start_link() at pid <0.149.0>
+2012-06-21 03:10:05.288 [debug] <0.151.0> Supervisor httpc_profile_sup started httpc_manager:start_link(default, only_session_cookies, inets) at pid <0.152.0>
+2012-06-21 03:10:05.300 [debug] <0.150.0> Supervisor httpc_sup started httpc_profile_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.151.0>
+2012-06-21 03:10:05.303 [debug] <0.150.0> Supervisor httpc_sup started httpc_handler_sup:start_link() at pid <0.153.0>
+2012-06-21 03:10:05.304 [debug] <0.148.0> Supervisor inets_sup started httpc_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.150.0>
+2012-06-21 03:10:05.307 [debug] <0.148.0> Supervisor inets_sup started httpd_sup:start_link([]) at pid <0.154.0>
+2012-06-21 03:10:05.320 [debug] <0.148.0> Supervisor inets_sup started tftp_sup:start_link([]) at pid <0.155.0>
+2012-06-21 03:10:05.321 [error] <0.60.0>@kadmin_01_news:init:{17,7} Some message
+2012-06-21 03:10:05.321 [info] <0.6.0> Application inets started on node kadmin@natty
+2012-06-21 03:10:05.333 [debug] <0.60.0>@kadmin_01_news:init:{18,7} inets
+2012-06-21 03:10:05.334 [error] <0.60.0> Execution of "/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl" failed: {'EXIT',{undef,[{lager,debug,["inets: ~p [~s:~p]",[ok,"/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl",7]],[]},{kadmin_01_news,init,0,[{file,"/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl"},{line,19}]},{boss_web_controller,'-run_init_scripts/1-fun-0-',2,[{file,"src/boss/boss_web_controller.erl"},{line,291}]},{lists,foldl,3,[{file,"lists.erl"},{line,1197}]},{boss_web_controller,'-handle_info/2-fun-0-',1,[{file,"src/boss/boss_web_controller.erl"},{line,146}]},{lists,map,2,[{file,"lists.erl"},{line,1173}]},{boss_web_controller,handle_info,2,[{file,"src/boss/boss_web_controller.erl"},{line,132}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]}]}}
+
+2012-06-21 03:13:12.610 [debug] <0.142.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-06-21 03:13:12.620 [debug] <0.144.0> Lager installed handler error_logger_lager_h into error_logger
+2012-06-21 03:13:12.620 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-06-21 03:13:12.655 [debug] <0.148.0> Supervisor inets_sup started ftp_sup:start_link() at pid <0.149.0>
+2012-06-21 03:13:12.711 [debug] <0.151.0> Supervisor httpc_profile_sup started httpc_manager:start_link(default, only_session_cookies, inets) at pid <0.152.0>
+2012-06-21 03:13:12.712 [debug] <0.150.0> Supervisor httpc_sup started httpc_profile_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.151.0>
+2012-06-21 03:13:12.722 [debug] <0.150.0> Supervisor httpc_sup started httpc_handler_sup:start_link() at pid <0.153.0>
+2012-06-21 03:13:12.722 [debug] <0.148.0> Supervisor inets_sup started httpc_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.150.0>
+2012-06-21 03:13:12.730 [debug] <0.148.0> Supervisor inets_sup started httpd_sup:start_link([]) at pid <0.154.0>
+2012-06-21 03:13:12.734 [debug] <0.148.0> Supervisor inets_sup started tftp_sup:start_link([]) at pid <0.155.0>
+2012-06-21 03:13:12.739 [error] <0.60.0>@kadmin_01_news:init:{17,7} Some message
+2012-06-21 03:13:12.739 [info] <0.6.0> Application inets started on node kadmin@natty
+2012-06-21 03:13:12.739 [debug] <0.60.0>@kadmin_01_news:init:{18,7} inets
+2012-06-21 03:13:12.740 [error] <0.60.0> Execution of "/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl" failed: {'EXIT',{undef,[{lager,debug,["inets: ~p [~s:~p]",[ok,"/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl",7]],[]},{kadmin_01_news,init,0,[{file,"/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl"},{line,21}]},{boss_web_controller,'-run_init_scripts/1-fun-0-',2,[{file,"src/boss/boss_web_controller.erl"},{line,291}]},{lists,foldl,3,[{file,"lists.erl"},{line,1197}]},{boss_web_controller,'-handle_info/2-fun-0-',1,[{file,"src/boss/boss_web_controller.erl"},{line,146}]},{lists,map,2,[{file,"lists.erl"},{line,1173}]},{boss_web_controller,handle_info,2,[{file,"src/boss/boss_web_controller.erl"},{line,132}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]}]}}
+
+2012-06-21 03:14:54.523 [debug] <0.142.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-06-21 03:14:54.527 [debug] <0.144.0> Lager installed handler error_logger_lager_h into error_logger
+2012-06-21 03:14:54.528 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-06-21 03:14:54.563 [debug] <0.148.0> Supervisor inets_sup started ftp_sup:start_link() at pid <0.149.0>
+2012-06-21 03:14:54.605 [debug] <0.151.0> Supervisor httpc_profile_sup started httpc_manager:start_link(default, only_session_cookies, inets) at pid <0.152.0>
+2012-06-21 03:14:54.605 [debug] <0.150.0> Supervisor httpc_sup started httpc_profile_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.151.0>
+2012-06-21 03:14:54.612 [debug] <0.150.0> Supervisor httpc_sup started httpc_handler_sup:start_link() at pid <0.153.0>
+2012-06-21 03:14:54.613 [debug] <0.148.0> Supervisor inets_sup started httpc_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.150.0>
+2012-06-21 03:14:54.616 [debug] <0.148.0> Supervisor inets_sup started httpd_sup:start_link([]) at pid <0.154.0>
+2012-06-21 03:14:54.643 [debug] <0.148.0> Supervisor inets_sup started tftp_sup:start_link([]) at pid <0.155.0>
+2012-06-21 03:14:54.643 [error] <0.60.0>@kadmin_01_news:init:{15,7} Some message
+2012-06-21 03:14:54.643 [info] <0.6.0> Application inets started on node kadmin@natty
+2012-06-21 03:14:54.645 [debug] <0.60.0>@kadmin_01_news:init:{16,7} inets
+2012-06-21 03:14:54.646 [error] <0.60.0> Execution of "/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl" failed: {'EXIT',{undef,[{lager,debug,["inets: ~p [~s:~p]",[ok,"/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl",7]],[]},{kadmin_01_news,init,0,[{file,"/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl"},{line,19}]},{boss_web_controller,'-run_init_scripts/1-fun-0-',2,[{file,"src/boss/boss_web_controller.erl"},{line,291}]},{lists,foldl,3,[{file,"lists.erl"},{line,1197}]},{boss_web_controller,'-handle_info/2-fun-0-',1,[{file,"src/boss/boss_web_controller.erl"},{line,146}]},{lists,map,2,[{file,"lists.erl"},{line,1173}]},{boss_web_controller,handle_info,2,[{file,"src/boss/boss_web_controller.erl"},{line,132}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]}]}}
+
+2012-06-21 03:15:15.591 [debug] <0.142.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-06-21 03:15:15.603 [debug] <0.144.0> Lager installed handler error_logger_lager_h into error_logger
+2012-06-21 03:15:15.604 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-06-21 03:15:15.629 [debug] <0.148.0> Supervisor inets_sup started ftp_sup:start_link() at pid <0.149.0>
+2012-06-21 03:15:15.671 [debug] <0.151.0> Supervisor httpc_profile_sup started httpc_manager:start_link(default, only_session_cookies, inets) at pid <0.152.0>
+2012-06-21 03:15:15.672 [debug] <0.150.0> Supervisor httpc_sup started httpc_profile_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.151.0>
+2012-06-21 03:15:15.680 [debug] <0.150.0> Supervisor httpc_sup started httpc_handler_sup:start_link() at pid <0.153.0>
+2012-06-21 03:15:15.680 [debug] <0.148.0> Supervisor inets_sup started httpc_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.150.0>
+2012-06-21 03:15:15.687 [debug] <0.148.0> Supervisor inets_sup started httpd_sup:start_link([]) at pid <0.154.0>
+2012-06-21 03:15:15.693 [debug] <0.148.0> Supervisor inets_sup started tftp_sup:start_link([]) at pid <0.155.0>
+2012-06-21 03:15:15.700 [error] <0.60.0>@kadmin_01_news:init:{15,7} Some message
+2012-06-21 03:15:15.700 [info] <0.6.0> Application inets started on node kadmin@natty
+2012-06-21 03:15:15.701 [debug] <0.60.0>@kadmin_01_news:init:{16,7} inets
+2012-06-21 03:15:15.702 [error] <0.60.0> Execution of "/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl" failed: {'EXIT',{undef,[{lager,debug,["inets: ~p [~s:~p]",[ok,"/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl",7]],[]},{kadmin_01_news,init,0,[{file,"/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl"},{line,19}]},{boss_web_controller,'-run_init_scripts/1-fun-0-',2,[{file,"src/boss/boss_web_controller.erl"},{line,291}]},{lists,foldl,3,[{file,"lists.erl"},{line,1197}]},{boss_web_controller,'-handle_info/2-fun-0-',1,[{file,"src/boss/boss_web_controller.erl"},{line,146}]},{lists,map,2,[{file,"lists.erl"},{line,1173}]},{boss_web_controller,handle_info,2,[{file,"src/boss/boss_web_controller.erl"},{line,132}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]}]}}
+
+2012-06-21 03:16:44.485 [debug] <0.142.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-06-21 03:16:44.500 [debug] <0.144.0> Lager installed handler error_logger_lager_h into error_logger
+2012-06-21 03:16:44.500 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-06-21 03:16:44.540 [debug] <0.148.0> Supervisor inets_sup started ftp_sup:start_link() at pid <0.149.0>
+2012-06-21 03:16:44.563 [debug] <0.151.0> Supervisor httpc_profile_sup started httpc_manager:start_link(default, only_session_cookies, inets) at pid <0.152.0>
+2012-06-21 03:16:44.563 [debug] <0.150.0> Supervisor httpc_sup started httpc_profile_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.151.0>
+2012-06-21 03:16:44.573 [debug] <0.150.0> Supervisor httpc_sup started httpc_handler_sup:start_link() at pid <0.153.0>
+2012-06-21 03:16:44.578 [debug] <0.148.0> Supervisor inets_sup started httpc_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.150.0>
+2012-06-21 03:16:44.583 [debug] <0.148.0> Supervisor inets_sup started httpd_sup:start_link([]) at pid <0.154.0>
+2012-06-21 03:16:44.586 [debug] <0.148.0> Supervisor inets_sup started tftp_sup:start_link([]) at pid <0.155.0>
+2012-06-21 03:16:44.586 [error] <0.60.0>@kadmin_01_news:init:{15,7} Some message
+2012-06-21 03:16:44.586 [info] <0.6.0> Application inets started on node kadmin@natty
+2012-06-21 03:16:44.593 [debug] <0.60.0>@kadmin_01_news:init:{16,7} inets
+2012-06-21 03:16:44.593 [debug] <0.60.0>@kadmin_01_news:init:{19,7} inets: ok
+2012-06-21 03:20:00.933 [debug] <0.142.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-06-21 03:20:00.956 [debug] <0.144.0> Lager installed handler error_logger_lager_h into error_logger
+2012-06-21 03:20:00.957 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-06-21 03:20:00.983 [debug] <0.148.0> Supervisor inets_sup started ftp_sup:start_link() at pid <0.149.0>
+2012-06-21 03:20:01.044 [debug] <0.151.0> Supervisor httpc_profile_sup started httpc_manager:start_link(default, only_session_cookies, inets) at pid <0.152.0>
+2012-06-21 03:20:01.044 [debug] <0.150.0> Supervisor httpc_sup started httpc_profile_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.151.0>
+2012-06-21 03:20:01.052 [debug] <0.150.0> Supervisor httpc_sup started httpc_handler_sup:start_link() at pid <0.153.0>
+2012-06-21 03:20:01.052 [debug] <0.148.0> Supervisor inets_sup started httpc_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.150.0>
+2012-06-21 03:20:01.056 [debug] <0.148.0> Supervisor inets_sup started httpd_sup:start_link([]) at pid <0.154.0>
+2012-06-21 03:20:01.068 [debug] <0.148.0> Supervisor inets_sup started tftp_sup:start_link([]) at pid <0.155.0>
+2012-06-21 03:20:01.068 [error] <0.60.0>@kadmin_01_news:init:{15,7} Some message
+2012-06-21 03:20:01.068 [info] <0.6.0> Application inets started on node kadmin@natty
+2012-06-21 03:20:01.069 [debug] <0.60.0>@kadmin_01_news:init:{16,7} inets
+2012-06-21 03:20:01.069 [debug] <0.60.0>@kadmin_01_news:init:{19,7} inets: ok
+2012-06-21 03:20:01.070 [error] <0.60.0> Execution of "/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl" failed: {'EXIT',{undef,[{lager,debug,["some message: ~p [~p:~p]",[hi,"/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl",7]],[]},{kadmin_01_news,init,0,[{file,"/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl"},{line,20}]},{boss_web_controller,'-run_init_scripts/1-fun-0-',2,[{file,"src/boss/boss_web_controller.erl"},{line,291}]},{lists,foldl,3,[{file,"lists.erl"},{line,1197}]},{boss_web_controller,'-handle_info/2-fun-0-',1,[{file,"src/boss/boss_web_controller.erl"},{line,146}]},{lists,map,2,[{file,"lists.erl"},{line,1173}]},{boss_web_controller,handle_info,2,[{file,"src/boss/boss_web_controller.erl"},{line,132}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]}]}}
+
+2012-06-21 03:24:58.325 [debug] <0.142.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-06-21 03:24:58.332 [debug] <0.144.0> Lager installed handler error_logger_lager_h into error_logger
+2012-06-21 03:24:58.336 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-06-21 03:24:58.372 [debug] <0.148.0> Supervisor inets_sup started ftp_sup:start_link() at pid <0.149.0>
+2012-06-21 03:24:58.413 [debug] <0.151.0> Supervisor httpc_profile_sup started httpc_manager:start_link(default, only_session_cookies, inets) at pid <0.152.0>
+2012-06-21 03:24:58.413 [debug] <0.150.0> Supervisor httpc_sup started httpc_profile_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.151.0>
+2012-06-21 03:24:58.419 [debug] <0.150.0> Supervisor httpc_sup started httpc_handler_sup:start_link() at pid <0.153.0>
+2012-06-21 03:24:58.422 [debug] <0.148.0> Supervisor inets_sup started httpc_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.150.0>
+2012-06-21 03:24:58.430 [debug] <0.148.0> Supervisor inets_sup started httpd_sup:start_link([]) at pid <0.154.0>
+2012-06-21 03:24:58.441 [debug] <0.148.0> Supervisor inets_sup started tftp_sup:start_link([]) at pid <0.155.0>
+2012-06-21 03:24:58.442 [error] <0.60.0>@kadmin_01_news:init:{15,7} Some message
+2012-06-21 03:24:58.442 [info] <0.6.0> Application inets started on node kadmin@natty
+2012-06-21 03:24:58.442 [debug] <0.60.0>@kadmin_01_news:init:{16,7} inets
+2012-06-21 03:24:58.442 [debug] <0.60.0>@kadmin_01_news:init:{19,7} inets: ok
+2012-06-21 03:24:58.443 [debug] <0.60.0>@kadmin_01_news:init:{20,7} some message: hi ["/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl":7]
+2012-06-27 23:00:15.198 [debug] <0.142.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-06-27 23:00:15.209 [debug] <0.144.0> Lager installed handler error_logger_lager_h into error_logger
+2012-06-27 23:00:15.210 [debug] <0.60.0>@kadmin_01_news:init:{16,7} initialization
+2012-06-27 23:00:15.210 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-06-27 23:01:01.586 [debug] <0.142.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-06-27 23:01:01.591 [debug] <0.144.0> Lager installed handler error_logger_lager_h into error_logger
+2012-06-27 23:01:01.591 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-06-27 23:01:01.596 [error] <0.60.0> Execution of "/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl" failed: {'EXIT',{undef,[{lager,debug,["initialization"],[]},{kadmin_01_news,init,0,[{file,"/home/sizov/docs/kadmin/priv/init/kadmin_01_news.erl"},{line,16}]},{boss_web_controller,'-run_init_scripts/1-fun-0-',2,[{file,"src/boss/boss_web_controller.erl"},{line,291}]},{lists,foldl,3,[{file,"lists.erl"},{line,1197}]},{boss_web_controller,'-handle_info/2-fun-0-',1,[{file,"src/boss/boss_web_controller.erl"},{line,146}]},{lists,map,2,[{file,"lists.erl"},{line,1173}]},{boss_web_controller,handle_info,2,[{file,"src/boss/boss_web_controller.erl"},{line,132}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]}]}}
+
+2012-06-27 23:04:14.602 [debug] <0.142.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-06-27 23:04:14.606 [debug] <0.144.0> Lager installed handler error_logger_lager_h into error_logger
+2012-06-27 23:04:14.607 [debug] <0.60.0>@kadmin_01_news:init:{16,7} initialization
+2012-06-27 23:04:14.607 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-06-27 23:37:08.506 [debug] <0.142.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-06-27 23:37:08.510 [debug] <0.144.0> Lager installed handler error_logger_lager_h into error_logger
+2012-06-27 23:37:08.516 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-06-27 23:37:08.576 [debug] <0.148.0> Supervisor inets_sup started ftp_sup:start_link() at pid <0.149.0>
+2012-06-27 23:37:08.622 [debug] <0.151.0> Supervisor httpc_profile_sup started httpc_manager:start_link(default, only_session_cookies, inets) at pid <0.152.0>
+2012-06-27 23:37:08.622 [debug] <0.150.0> Supervisor httpc_sup started httpc_profile_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.151.0>
+2012-06-27 23:37:08.628 [debug] <0.150.0> Supervisor httpc_sup started httpc_handler_sup:start_link() at pid <0.153.0>
+2012-06-27 23:37:08.629 [debug] <0.148.0> Supervisor inets_sup started httpc_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.150.0>
+2012-06-27 23:37:08.637 [debug] <0.148.0> Supervisor inets_sup started httpd_sup:start_link([]) at pid <0.154.0>
+2012-06-27 23:37:08.654 [debug] <0.148.0> Supervisor inets_sup started tftp_sup:start_link([]) at pid <0.155.0>
+2012-06-27 23:37:08.654 [info] <0.6.0> Application inets started on node kadmin@natty
+2012-06-28 00:24:57.142 [debug] <0.152.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-06-28 00:24:57.155 [debug] <0.154.0> Lager installed handler error_logger_lager_h into error_logger
+2012-06-28 00:24:57.155 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-06-28 00:24:57.194 [debug] <0.158.0> Supervisor inets_sup started ftp_sup:start_link() at pid <0.159.0>
+2012-06-28 00:24:57.250 [debug] <0.161.0> Supervisor httpc_profile_sup started httpc_manager:start_link(default, only_session_cookies, inets) at pid <0.162.0>
+2012-06-28 00:24:57.251 [debug] <0.160.0> Supervisor httpc_sup started httpc_profile_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.161.0>
+2012-06-28 00:24:57.257 [debug] <0.160.0> Supervisor httpc_sup started httpc_handler_sup:start_link() at pid <0.163.0>
+2012-06-28 00:24:57.258 [debug] <0.158.0> Supervisor inets_sup started httpc_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.160.0>
+2012-06-28 00:24:57.270 [debug] <0.158.0> Supervisor inets_sup started httpd_sup:start_link([]) at pid <0.164.0>
+2012-06-28 00:24:57.275 [debug] <0.158.0> Supervisor inets_sup started tftp_sup:start_link([]) at pid <0.165.0>
+2012-06-28 00:24:57.275 [info] <0.6.0> Application inets started on node kadmin@natty
+2012-06-28 00:24:57.287 [debug] <0.60.0>@kadmin_user:before_create:{13,7} Result: []
+2012-06-28 00:24:57.289 [debug] <0.60.0>@kadmin_01_news:create_admin:{39,7} Initial admin user added
+2012-06-28 00:26:58.863 [info] <0.108.0> GET / [kadmin] 302 313ms
+
+2012-06-28 00:26:59.358 [error] <0.108.0> GET /login [kadmin] 404 441ms
+
+2012-06-28 00:30:29.970 [debug] <0.142.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-06-28 00:30:29.975 [debug] <0.144.0> Lager installed handler error_logger_lager_h into error_logger
+2012-06-28 00:30:29.975 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-06-28 00:30:30.010 [debug] <0.148.0> Supervisor inets_sup started ftp_sup:start_link() at pid <0.149.0>
+2012-06-28 00:30:30.055 [debug] <0.151.0> Supervisor httpc_profile_sup started httpc_manager:start_link(default, only_session_cookies, inets) at pid <0.152.0>
+2012-06-28 00:30:30.056 [debug] <0.150.0> Supervisor httpc_sup started httpc_profile_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.151.0>
+2012-06-28 00:30:30.058 [debug] <0.150.0> Supervisor httpc_sup started httpc_handler_sup:start_link() at pid <0.153.0>
+2012-06-28 00:30:30.059 [debug] <0.148.0> Supervisor inets_sup started httpc_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.150.0>
+2012-06-28 00:30:30.062 [debug] <0.148.0> Supervisor inets_sup started httpd_sup:start_link([]) at pid <0.154.0>
+2012-06-28 00:30:30.065 [debug] <0.148.0> Supervisor inets_sup started tftp_sup:start_link([]) at pid <0.155.0>
+2012-06-28 00:30:30.066 [info] <0.6.0> Application inets started on node kadmin@natty
+2012-06-28 00:30:30.068 [debug] <0.60.0>@kadmin_user:before_create:{13,7} Result: []
+2012-06-28 00:30:30.078 [debug] <0.60.0>@kadmin_01_news:create_admin:{39,7} Initial admin user added
+2012-06-28 00:30:41.949 [error] <0.125.0> gen_server <0.125.0> terminated with reason: {'module could not be loaded',[{kadmin_kadmin_login_controller_controller,module_info,[exports],[]},{boss_controller_lib,convert_params_to_tokens,3,[{file,"src/boss/boss_controller_lib.erl"},{line,5}]},{boss_router_controller,handle_call,3,[{file,"src/boss/boss_router_controller.erl"},{line,73}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-06-28 00:30:41.955 [error] <0.125.0> CRASH REPORT Process <0.125.0> with 0 neighbours exited with reason: call to undefined function kadmin_kadmin_login_controller_controller:module_info(exports) in gen_server:terminate/6 line 747
+2012-06-28 00:30:41.963 [error] <0.124.0> Supervisor boss_router_sup had child router_controller started with boss_router_controller:start_link([{application,kadmin},{controllers,["kadmin_kadmin_controller","kadmin_kadmin_user_controller","..."]}]) at <0.125.0> exit with reason call to undefined function kadmin_kadmin_login_controller_controller:module_info(exports) in context child_terminated
+2012-06-28 00:30:41.970 [error] <0.119.0> CRASH REPORT Process <0.119.0> with 0 neighbours exited with reason: {{undef,[{kadmin_kadmin_login_controller_controller,module_info,[exports],[]},{boss_controller_lib,convert_params_to_tokens,3,[{file,"src/boss/boss_controller_lib.erl"},{line,5}]},{boss_router_controller,handle_call,3,[{file,"src/boss/boss_router_controller.erl"},{line,73}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[<0.125.0>,{route,"/login"}]}} in gen_server:call/2 line 180
+2012-06-28 00:30:41.979 [info] <0.160.0> Loading routes from "/home/sizov/docs/kadmin/priv/kadmin.routes" ....
+
+2012-06-28 00:30:41.980 [debug] <0.124.0> Supervisor boss_router_sup started boss_router_controller:start_link([{application,kadmin},{controllers,["kadmin_kadmin_controller","kadmin_kadmin_user_controller","..."]}]) at pid <0.160.0>
+2012-06-28 00:32:35.990 [error] <0.160.0> gen_server <0.160.0> terminated with reason: {'module could not be loaded',[{kadmin_kadmin_login_controller_controller,module_info,[exports],[]},{boss_controller_lib,convert_params_to_tokens,3,[{file,"src/boss/boss_controller_lib.erl"},{line,5}]},{boss_router_controller,handle_call,3,[{file,"src/boss/boss_router_controller.erl"},{line,73}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-06-28 00:32:36.008 [error] <0.160.0> CRASH REPORT Process <0.160.0> with 0 neighbours exited with reason: call to undefined function kadmin_kadmin_login_controller_controller:module_info(exports) in gen_server:terminate/6 line 747
+2012-06-28 00:32:36.013 [error] <0.124.0> Supervisor boss_router_sup had child router_controller started with boss_router_controller:start_link([{application,kadmin},{controllers,["kadmin_kadmin_controller","kadmin_kadmin_user_controller","..."]}]) at <0.160.0> exit with reason call to undefined function kadmin_kadmin_login_controller_controller:module_info(exports) in context child_terminated
+2012-06-28 00:32:36.022 [error] <0.112.0> CRASH REPORT Process <0.112.0> with 0 neighbours exited with reason: {{undef,[{kadmin_kadmin_login_controller_controller,module_info,[exports],[]},{boss_controller_lib,convert_params_to_tokens,3,[{file,"src/boss/boss_controller_lib.erl"},{line,5}]},{boss_router_controller,handle_call,3,[{file,"src/boss/boss_router_controller.erl"},{line,73}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[<0.160.0>,{route,"/login"}]}} in gen_server:call/2 line 180
+2012-06-28 00:32:36.031 [info] <0.164.0> Loading routes from "/home/sizov/docs/kadmin/priv/kadmin.routes" ....
+
+2012-06-28 00:32:36.031 [debug] <0.124.0> Supervisor boss_router_sup started boss_router_controller:start_link([{application,kadmin},{controllers,["kadmin_kadmin_controller","kadmin_kadmin_user_controller","..."]}]) at pid <0.164.0>
+2012-06-28 00:32:47.905 [debug] <0.142.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-06-28 00:32:47.917 [debug] <0.144.0> Lager installed handler error_logger_lager_h into error_logger
+2012-06-28 00:32:47.918 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-06-28 00:32:47.940 [debug] <0.148.0> Supervisor inets_sup started ftp_sup:start_link() at pid <0.149.0>
+2012-06-28 00:32:47.985 [debug] <0.151.0> Supervisor httpc_profile_sup started httpc_manager:start_link(default, only_session_cookies, inets) at pid <0.152.0>
+2012-06-28 00:32:47.986 [debug] <0.150.0> Supervisor httpc_sup started httpc_profile_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.151.0>
+2012-06-28 00:32:47.989 [debug] <0.150.0> Supervisor httpc_sup started httpc_handler_sup:start_link() at pid <0.153.0>
+2012-06-28 00:32:47.989 [debug] <0.148.0> Supervisor inets_sup started httpc_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.150.0>
+2012-06-28 00:32:47.993 [debug] <0.148.0> Supervisor inets_sup started httpd_sup:start_link([]) at pid <0.154.0>
+2012-06-28 00:32:47.995 [debug] <0.148.0> Supervisor inets_sup started tftp_sup:start_link([]) at pid <0.155.0>
+2012-06-28 00:32:47.996 [info] <0.6.0> Application inets started on node kadmin@natty
+2012-06-28 00:32:47.999 [debug] <0.60.0>@kadmin_user:before_create:{13,7} Result: []
+2012-06-28 00:32:48.009 [debug] <0.60.0>@kadmin_01_news:create_admin:{39,7} Initial admin user added
+2012-06-28 00:32:51.874 [error] <0.125.0> gen_server <0.125.0> terminated with reason: {'module could not be loaded',[{kadmin_kadmin_login_controller_controller,module_info,[exports],[]},{boss_controller_lib,convert_params_to_tokens,3,[{file,"src/boss/boss_controller_lib.erl"},{line,5}]},{boss_router_controller,handle_call,3,[{file,"src/boss/boss_router_controller.erl"},{line,73}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-06-28 00:32:51.883 [error] <0.125.0> CRASH REPORT Process <0.125.0> with 0 neighbours exited with reason: call to undefined function kadmin_kadmin_login_controller_controller:module_info(exports) in gen_server:terminate/6 line 747
+2012-06-28 00:32:51.889 [error] <0.124.0> Supervisor boss_router_sup had child router_controller started with boss_router_controller:start_link([{application,kadmin},{controllers,["kadmin_kadmin_controller","kadmin_kadmin_user_controller","..."]}]) at <0.125.0> exit with reason call to undefined function kadmin_kadmin_login_controller_controller:module_info(exports) in context child_terminated
+2012-06-28 00:32:51.900 [error] <0.108.0> CRASH REPORT Process <0.108.0> with 0 neighbours exited with reason: {{undef,[{kadmin_kadmin_login_controller_controller,module_info,[exports],[]},{boss_controller_lib,convert_params_to_tokens,3,[{file,"src/boss/boss_controller_lib.erl"},{line,5}]},{boss_router_controller,handle_call,3,[{file,"src/boss/boss_router_controller.erl"},{line,73}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[<0.125.0>,{route,"/login"}]}} in gen_server:call/2 line 180
+2012-06-28 00:32:51.909 [info] <0.160.0> Loading routes from "/home/sizov/docs/kadmin/priv/kadmin.routes" ....
+
+2012-06-28 00:32:51.909 [debug] <0.124.0> Supervisor boss_router_sup started boss_router_controller:start_link([{application,kadmin},{controllers,["kadmin_kadmin_controller","kadmin_kadmin_user_controller","..."]}]) at pid <0.160.0>
+2012-06-28 00:34:23.377 [error] <0.160.0> gen_server <0.160.0> terminated with reason: {'module could not be loaded',[{kadmin_kadmin_login_controller_controller,module_info,[exports],[]},{boss_controller_lib,convert_params_to_tokens,3,[{file,"src/boss/boss_controller_lib.erl"},{line,5}]},{boss_router_controller,handle_call,3,[{file,"src/boss/boss_router_controller.erl"},{line,73}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-06-28 00:34:23.387 [error] <0.160.0> CRASH REPORT Process <0.160.0> with 0 neighbours exited with reason: call to undefined function kadmin_kadmin_login_controller_controller:module_info(exports) in gen_server:terminate/6 line 747
+2012-06-28 00:34:23.395 [error] <0.124.0> Supervisor boss_router_sup had child router_controller started with boss_router_controller:start_link([{application,kadmin},{controllers,["kadmin_kadmin_controller","kadmin_kadmin_user_controller","..."]}]) at <0.160.0> exit with reason call to undefined function kadmin_kadmin_login_controller_controller:module_info(exports) in context child_terminated
+2012-06-28 00:34:23.404 [error] <0.120.0> CRASH REPORT Process <0.120.0> with 0 neighbours exited with reason: {{undef,[{kadmin_kadmin_login_controller_controller,module_info,[exports],[]},{boss_controller_lib,convert_params_to_tokens,3,[{file,"src/boss/boss_controller_lib.erl"},{line,5}]},{boss_router_controller,handle_call,3,[{file,"src/boss/boss_router_controller.erl"},{line,73}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[<0.160.0>,{route,"/login"}]}} in gen_server:call/2 line 180
+2012-06-28 00:34:23.411 [info] <0.163.0> Loading routes from "/home/sizov/docs/kadmin/priv/kadmin.routes" ....
+
+2012-06-28 00:34:23.412 [debug] <0.124.0> Supervisor boss_router_sup started boss_router_controller:start_link([{application,kadmin},{controllers,["kadmin_kadmin_controller","kadmin_kadmin_user_controller","..."]}]) at pid <0.163.0>
+2012-06-28 00:34:32.419 [debug] <0.142.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-06-28 00:34:32.424 [debug] <0.144.0> Lager installed handler error_logger_lager_h into error_logger
+2012-06-28 00:34:32.424 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-06-28 00:34:32.451 [debug] <0.148.0> Supervisor inets_sup started ftp_sup:start_link() at pid <0.149.0>
+2012-06-28 00:34:32.500 [debug] <0.151.0> Supervisor httpc_profile_sup started httpc_manager:start_link(default, only_session_cookies, inets) at pid <0.152.0>
+2012-06-28 00:34:32.505 [debug] <0.150.0> Supervisor httpc_sup started httpc_profile_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.151.0>
+2012-06-28 00:34:32.508 [debug] <0.150.0> Supervisor httpc_sup started httpc_handler_sup:start_link() at pid <0.153.0>
+2012-06-28 00:34:32.509 [debug] <0.148.0> Supervisor inets_sup started httpc_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.150.0>
+2012-06-28 00:34:32.518 [debug] <0.148.0> Supervisor inets_sup started httpd_sup:start_link([]) at pid <0.154.0>
+2012-06-28 00:34:32.521 [debug] <0.148.0> Supervisor inets_sup started tftp_sup:start_link([]) at pid <0.155.0>
+2012-06-28 00:34:32.522 [info] <0.6.0> Application inets started on node kadmin@natty
+2012-06-28 00:34:32.525 [debug] <0.60.0>@kadmin_user:before_create:{13,7} Result: []
+2012-06-28 00:34:32.536 [debug] <0.60.0>@kadmin_01_news:create_admin:{39,7} Initial admin user added
+2012-06-28 00:34:34.351 [info] <0.123.0> GET /login [kadmin] 200 49ms
+
+2012-06-28 00:34:52.169 [info] <0.122.0> POST /login [kadmin] 302 6ms
+
+2012-06-28 00:34:52.265 [info] <0.122.0> GET / [kadmin] 200 71ms
+
+2012-06-28 00:35:12.377 [error] <0.122.0> GET /mmwl_user/index [kadmin] 404 0ms
+
+2012-06-28 00:35:34.545 [info] <0.122.0> GET / [kadmin] 200 31ms
+
+2012-06-28 00:35:36.821 [info] <0.122.0> GET /kadmin_user/logout [kadmin] 302 5ms
+
+2012-06-28 00:35:36.896 [info] <0.122.0> GET /login [kadmin] 200 43ms
+
+2012-06-28 00:35:39.295 [info] <0.122.0> GET / [kadmin] 302 10ms
+
+2012-06-28 00:35:39.339 [info] <0.122.0> GET /login [kadmin] 200 35ms
+
+2012-06-28 00:37:21.527 [info] <0.122.0> POST /login [kadmin] 302 6ms
+
+2012-06-28 00:37:21.591 [info] <0.122.0> GET / [kadmin] 200 35ms
+
+2012-06-28 00:37:24.489 [error] <0.122.0> GET /mmwl_user/index [kadmin] 404 0ms
+
+2012-06-28 01:03:08.704 [error] <0.113.0> GET /mmwl_user/index [kadmin] 404 0ms
+
+2012-06-28 01:07:26.269 [info] <0.113.0> GET / [kadmin] 200 136ms
+
+2012-06-28 01:07:29.063 [info] <0.113.0> GET /kadmin_user/index [kadmin] 200 103ms
+
+2012-06-28 01:12:29.956 [info] <0.162.0> GET / [kadmin] 200 285ms
+
+2012-06-28 01:12:32.816 [error] <0.162.0> GET /users/index [kadmin] 404 177ms
+
+2012-06-28 01:13:15.922 [info] <0.162.0> GET /users/index [kadmin] 200 1486ms
+
+2012-06-28 01:15:39.564 [error] <0.162.0> GET /kadmin_user/create [kadmin] 404 0ms
+
+2012-06-28 01:18:56.694 [info] <0.162.0> GET /users/index [kadmin] 200 1969ms
+
+2012-06-28 01:22:41.434 [info] <0.162.0> GET /users/index [kadmin] 200 2066ms
+
+2012-06-28 01:24:55.240 [info] <0.162.0> GET /users/index [kadmin] 200 1849ms
+
+2012-06-28 01:28:48.257 [info] <0.162.0> GET /users/index [kadmin] 200 1390ms
+
+2012-06-28 01:29:01.748 [info] <0.162.0> GET /users/index [kadmin] 200 1459ms
+
+2012-06-28 01:29:46.449 [info] <0.162.0> GET /users/index [kadmin] 200 1129ms
+
+2012-06-28 01:31:53.167 [info] <0.162.0> GET /users/index [kadmin] 200 941ms
+
+2012-06-28 01:33:11.135 [info] <0.162.0> GET /users/index [kadmin] 200 260ms
+
+2012-06-28 01:35:38.055 [info] <0.162.0> GET /users/index [kadmin] 200 1791ms
+
+2012-06-28 01:45:10.375 [error] <0.157.0> {undef,[{lager,debug,["User list: ~p",[[]]],[]},{kadmin_users_controller,index,4,[{file,"/home/sizov/docs/kadmin/src/controller/kadmin_users_controller.erl"},{line,34}]},{boss_web_controller,execute_action,5,[{file,"src/boss/boss_web_controller.erl"},{line,616}]},{boss_web_controller,process_request,5,[{file,"src/boss/boss_web_controller.erl"},{line,404}]},{timer,tc,3,[{file,"timer.erl"},{line,194}]},{boss_web_controller,handle_request,3,[{file,"src/boss/boss_web_controller.erl"},{line,341}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,90}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2012-06-28 01:45:10.390 [error] <0.157.0> GET /users/index [kadmin] 500 150ms
+
+2012-06-28 01:46:25.858 [debug] <0.157.0>@kadmin_users_controller:index:{34,7} User list: []
+2012-06-28 01:46:25.937 [info] <0.157.0> GET /users/index [kadmin] 200 322ms
+
+2012-06-28 01:47:42.350 [debug] <0.157.0>@kadmin_users_controller:index:{34,7} User list: []
+2012-06-28 01:47:42.391 [info] <0.157.0> GET /users/index [kadmin] 200 168ms
+
+2012-06-28 01:48:00.177 [debug] <0.142.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-06-28 01:48:00.187 [debug] <0.144.0> Lager installed handler error_logger_lager_h into error_logger
+2012-06-28 01:48:00.187 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-06-28 01:48:00.211 [debug] <0.148.0> Supervisor inets_sup started ftp_sup:start_link() at pid <0.149.0>
+2012-06-28 01:48:00.257 [debug] <0.151.0> Supervisor httpc_profile_sup started httpc_manager:start_link(default, only_session_cookies, inets) at pid <0.152.0>
+2012-06-28 01:48:00.257 [debug] <0.150.0> Supervisor httpc_sup started httpc_profile_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.151.0>
+2012-06-28 01:48:00.260 [debug] <0.150.0> Supervisor httpc_sup started httpc_handler_sup:start_link() at pid <0.153.0>
+2012-06-28 01:48:00.260 [debug] <0.148.0> Supervisor inets_sup started httpc_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.150.0>
+2012-06-28 01:48:00.263 [debug] <0.148.0> Supervisor inets_sup started httpd_sup:start_link([]) at pid <0.154.0>
+2012-06-28 01:48:00.266 [debug] <0.148.0> Supervisor inets_sup started tftp_sup:start_link([]) at pid <0.155.0>
+2012-06-28 01:48:00.267 [info] <0.6.0> Application inets started on node kadmin@natty
+2012-06-28 01:48:00.270 [debug] <0.60.0>@kadmin_user:before_create:{13,7} Result: []
+2012-06-28 01:48:00.280 [debug] <0.60.0>@kadmin_01_news:create_admin:{39,7} Initial admin user added
+2012-06-28 01:48:04.812 [info] <0.115.0> GET /users/index [kadmin] 302 7ms
+
+2012-06-28 01:48:04.926 [info] <0.115.0> GET /login [kadmin] 200 71ms
+
+2012-06-28 01:48:17.239 [info] <0.115.0> POST /login [kadmin] 302 11ms
+
+2012-06-28 01:48:17.325 [info] <0.115.0> GET / [kadmin] 200 76ms
+
+2012-06-28 01:48:19.654 [debug] <0.115.0>@kadmin_users_controller:index:{34,7} User list: []
+2012-06-28 01:48:19.690 [info] <0.115.0> GET /users/index [kadmin] 200 40ms
+
+2012-06-28 01:49:53.935 [debug] <0.115.0>@kadmin_users_controller:index:{34,7} User list: [{kadmin_user,"kadmin_user-1","admin","FirstName LastName",<<33,35,47,41,122,87,165,167,67,137,74,14,74,128,31,195>>,undefined,undefined,"yourmail@mail.com"}]
+2012-06-28 01:49:53.967 [info] <0.115.0> GET /users/index [kadmin] 200 148ms
+
+2012-06-28 01:56:39.301 [debug] <0.108.0>@kadmin_users_controller:index:{37,7} User list: [[{id,"kadmin_user-1"},{login,"admin"},{full_name,"FirstName LastName"},{pass_hash,<<33,35,47,41,122,87,165,167,67,137,74,14,74,128,31,195>>},{access_level,undefined},{state,undefined},{contact_data,"yourmail@mail.com"}]]
+2012-06-28 01:56:39.320 [info] <0.108.0> GET /users/index [kadmin] 200 97ms
+
+2012-06-28 01:58:23.320 [debug] <0.108.0>@kadmin_users_controller:index:{37,7} User list: [[{id,"kadmin_user-1"},{login,"admin"},{full_name,"FirstName LastName"},{access_level,undefined},{state,undefined},{contact_data,"yourmail@mail.com"}]]
+2012-06-28 01:58:23.353 [info] <0.108.0> GET /users/index [kadmin] 200 104ms
+
+2012-06-29 01:52:02.386 [debug] <0.173.0>@kadmin_users_controller:index:{36,7} User list: [[{id,"kadmin_user-1"},{login,"admin"},{full_name,"FirstName LastName"},{access_level,undefined},{state,undefined},{contact_data,"yourmail@mail.com"}]]
+2012-06-29 01:52:02.503 [info] <0.173.0> GET /users/index [kadmin] 200 950ms
+
+2012-06-29 01:52:08.026 [info] <0.173.0> GET / [kadmin] 200 98ms
+
+2012-06-29 01:52:24.481 [debug] <0.173.0>@kadmin_users_controller:index:{36,7} User list: [[{id,"kadmin_user-1"},{login,"admin"},{full_name,"FirstName LastName"},{access_level,undefined},{state,undefined},{contact_data,"yourmail@mail.com"}]]
+2012-06-29 01:52:24.513 [info] <0.173.0> GET /users/index [kadmin] 200 134ms
+
+2012-06-29 23:38:29.719 [info] <0.167.0> GET / [kadmin] 200 1409ms
+
+2012-06-29 23:38:29.822 [info] <0.111.0> GET / [kadmin] 200 126ms
+
+2012-06-29 23:38:34.290 [error] <0.111.0> GET /kadmin_user/logout [kadmin] 404 0ms
+
+2012-06-29 23:38:41.588 [info] <0.111.0> GET / [kadmin] 200 127ms
+
+2012-06-29 23:38:43.707 [error] <0.111.0> GET /kadmin_user/logout [kadmin] 404 0ms
+
+2012-07-03 01:25:43.630 [debug] <0.143.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-07-03 01:25:43.671 [debug] <0.145.0> Lager installed handler error_logger_lager_h into error_logger
+2012-07-03 01:25:43.672 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-07-03 01:25:43.747 [debug] <0.149.0> Supervisor inets_sup started ftp_sup:start_link() at pid <0.150.0>
+2012-07-03 01:25:43.872 [debug] <0.152.0> Supervisor httpc_profile_sup started httpc_manager:start_link(default, only_session_cookies, inets) at pid <0.153.0>
+2012-07-03 01:25:43.873 [debug] <0.151.0> Supervisor httpc_sup started httpc_profile_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.152.0>
+2012-07-03 01:25:43.880 [debug] <0.151.0> Supervisor httpc_sup started httpc_handler_sup:start_link() at pid <0.154.0>
+2012-07-03 01:25:43.884 [debug] <0.149.0> Supervisor inets_sup started httpc_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.151.0>
+2012-07-03 01:25:43.908 [debug] <0.149.0> Supervisor inets_sup started httpd_sup:start_link([]) at pid <0.155.0>
+2012-07-03 01:25:43.934 [debug] <0.149.0> Supervisor inets_sup started tftp_sup:start_link([]) at pid <0.156.0>
+2012-07-03 01:25:43.935 [info] <0.6.0> Application inets started on node kadmin@natty
+2012-07-03 01:25:43.972 [debug] <0.60.0>@kadmin_user:before_create:{13,7} Result: []
+2012-07-03 01:25:44.006 [debug] <0.60.0>@kadmin_01_news:create_admin:{39,7} Initial admin user added
+2012-07-03 01:25:51.550 [info] <0.108.0> GET / [kadmin] 302 60ms
+
+2012-07-03 01:25:51.776 [info] <0.108.0> GET /login [kadmin] 200 139ms
+
+2012-07-03 01:25:56.312 [info] <0.108.0> POST /login [kadmin] 200 162ms
+
+2012-07-03 01:26:06.937 [info] <0.108.0> POST /login [kadmin] 302 85ms
+
+2012-07-03 01:26:07.062 [info] <0.108.0> GET / [kadmin] 200 116ms
+
+2012-07-03 01:26:09.431 [error] <0.108.0> GET /kadmin_user/logout [kadmin] 404 0ms
+
+2012-07-03 01:30:08.743 [info] <0.108.0> GET / [kadmin] 200 1200ms
+
+2012-07-03 01:30:11.187 [error] <0.108.0> GET /logout [kadmin] 404 0ms
+
+2012-07-03 01:30:27.211 [debug] <0.146.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-07-03 01:30:27.216 [debug] <0.148.0> Lager installed handler error_logger_lager_h into error_logger
+2012-07-03 01:30:27.217 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-07-03 01:30:27.230 [debug] <0.152.0> Supervisor inets_sup started ftp_sup:start_link() at pid <0.153.0>
+2012-07-03 01:30:27.265 [debug] <0.155.0> Supervisor httpc_profile_sup started httpc_manager:start_link(default, only_session_cookies, inets) at pid <0.156.0>
+2012-07-03 01:30:27.266 [debug] <0.154.0> Supervisor httpc_sup started httpc_profile_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.155.0>
+2012-07-03 01:30:27.278 [debug] <0.154.0> Supervisor httpc_sup started httpc_handler_sup:start_link() at pid <0.157.0>
+2012-07-03 01:30:27.279 [debug] <0.152.0> Supervisor inets_sup started httpc_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.154.0>
+2012-07-03 01:30:27.282 [debug] <0.152.0> Supervisor inets_sup started httpd_sup:start_link([]) at pid <0.158.0>
+2012-07-03 01:30:27.287 [debug] <0.152.0> Supervisor inets_sup started tftp_sup:start_link([]) at pid <0.159.0>
+2012-07-03 01:30:27.288 [info] <0.6.0> Application inets started on node kadmin@natty
+2012-07-03 01:30:27.291 [debug] <0.60.0>@kadmin_user:before_create:{13,7} Result: []
+2012-07-03 01:30:27.295 [debug] <0.60.0>@kadmin_01_news:create_admin:{39,7} Initial admin user added
+2012-07-03 01:30:31.779 [info] <0.108.0> GET /logout [kadmin] 302 147ms
+
+2012-07-03 01:30:31.995 [info] <0.108.0> GET /login [kadmin] 200 128ms
+
+2012-07-03 01:30:38.583 [info] <0.108.0> POST /login [kadmin] 302 104ms
+
+2012-07-03 01:30:38.884 [info] <0.108.0> GET / [kadmin] 200 272ms
+
+2012-07-03 01:30:41.401 [info] <0.108.0> GET /logout [kadmin] 302 54ms
+
+2012-07-03 01:30:41.476 [info] <0.108.0> GET /login [kadmin] 200 65ms
+
+2012-07-03 01:30:53.076 [info] <0.108.0> POST /login [kadmin] 302 82ms
+
+2012-07-03 01:30:53.226 [info] <0.108.0> GET / [kadmin] 200 120ms
+
+2012-07-03 01:31:04.850 [debug] <0.108.0>@kadmin_users_controller:index:{36,7} User list: [[{id,"kadmin_user-1"},{login,"admin"},{full_name,"FirstName LastName"},{access_level,undefined},{state,undefined},{contact_data,"yourmail@mail.com"}]]
+2012-07-03 01:31:04.906 [info] <0.108.0> GET /users/index [kadmin] 200 136ms
+
+2012-07-03 01:35:14.468 [debug] <0.146.0> Lager installed handler {lager_file_backend,"debug.log"} into lager_event
+2012-07-03 01:35:14.472 [debug] <0.148.0> Lager installed handler error_logger_lager_h into error_logger
+2012-07-03 01:35:14.481 [info] <0.6.0> Application lager started on node kadmin@natty
+2012-07-03 01:35:14.496 [debug] <0.152.0> Supervisor inets_sup started ftp_sup:start_link() at pid <0.153.0>
+2012-07-03 01:35:14.533 [debug] <0.155.0> Supervisor httpc_profile_sup started httpc_manager:start_link(default, only_session_cookies, inets) at pid <0.156.0>
+2012-07-03 01:35:14.533 [debug] <0.154.0> Supervisor httpc_sup started httpc_profile_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.155.0>
+2012-07-03 01:35:14.536 [debug] <0.154.0> Supervisor httpc_sup started httpc_handler_sup:start_link() at pid <0.157.0>
+2012-07-03 01:35:14.537 [debug] <0.152.0> Supervisor inets_sup started httpc_sup:start_link([{httpc,{default,only_session_cookies}}]) at pid <0.154.0>
+2012-07-03 01:35:14.540 [debug] <0.152.0> Supervisor inets_sup started httpd_sup:start_link([]) at pid <0.158.0>
+2012-07-03 01:35:14.553 [debug] <0.152.0> Supervisor inets_sup started tftp_sup:start_link([]) at pid <0.159.0>
+2012-07-03 01:35:14.553 [info] <0.6.0> Application inets started on node kadmin@natty
+2012-07-03 01:35:14.556 [debug] <0.60.0>@kadmin_user:before_create:{13,7} Result: []
+2012-07-03 01:35:14.561 [debug] <0.60.0>@kadmin_01_news:create_admin:{39,7} Initial admin user added
+2012-07-03 01:35:16.560 [info] <0.123.0> GET /users/index [kadmin] 302 92ms
+
+2012-07-03 01:35:16.783 [error] <0.123.0> GET /login [kadmin] 404 160ms
+
+2012-07-03 01:36:34.491 [info] <0.123.0> GET /login [kadmin] 200 695ms
+
+2012-07-03 01:36:43.295 [info] <0.123.0> POST /login [kadmin] 200 159ms
+
+2012-07-03 01:36:54.473 [info] <0.161.0> POST /login [kadmin] 200 145ms
+
+2012-07-03 01:37:25.392 [info] <0.115.0> GET / [kadmin] 302 85ms
+
+2012-07-03 01:37:25.602 [info] <0.115.0> GET /login [kadmin] 200 191ms
+
+2012-07-03 01:37:25.778 [info] <0.166.0> GET / [kadmin] 302 192ms
+
+2012-07-03 01:37:26.067 [info] <0.115.0> GET /login [kadmin] 200 266ms
+
+2012-07-03 01:38:08.017 [info] <0.166.0> GET /login [kadmin] 200 173ms
+
+2012-07-03 01:38:18.954 [info] <0.166.0> POST /login [kadmin] 302 131ms
+
+2012-07-03 01:38:19.208 [info] <0.166.0> GET / [kadmin] 200 225ms
+
+2012-07-03 01:38:21.500 [info] <0.166.0> GET /logout [kadmin] 302 109ms
+
+2012-07-03 01:38:21.699 [info] <0.166.0> GET /login [kadmin] 200 189ms
+
+2012-07-03 01:38:27.367 [info] <0.166.0> POST /login [kadmin] 302 119ms
+
+2012-07-03 01:38:27.551 [info] <0.166.0> GET / [kadmin] 200 174ms
+
