@@ -1,0 +1,88 @@
+{% extends "kadmin/index.html" %}
+{% block title %}Manage administrators{% endblock %}
+{% block p_main_container %}
+
+                            <div id="pMainContainer" class="cbrPnlMainContainer">
+
+                            <div id="ctl17_pSearchArea" onkeypress="javascript:return FireDefaultButton(event, 'ctl17_btnSearch')">
+
+
+
+<table class="Info" id="Info" width="100%">
+    <tbody><tr>
+        <td>
+            System Settings
+        </td>
+    </tr>
+</tbody></table>
+    <p>
+        <span id="ctl17_lError" style="color:Red;"></span>
+    </p>
+    <p>
+        <table width="100%" class="SearchTable" cellspacing="2" cellpadding="2">
+            <tbody><tr class="SearchTableCell">
+                <td style="width: 180px">
+				  Kelly settings
+                    <!-- <form method="get" action="/kadmin_user/create" class="_no_class" style="margin-bottom: 0em;"> -->
+                    <!-- <input type="submit" value="Add new admin" class="frmButton" style="height:20px;width:140px;"> -->
+                    <!-- </form> -->
+                </td>
+				  <form action="update" method="post">
+                <td style="width: 120px">
+				  <p>
+					Host
+                    <input type="text" value="{{ kelly_host }}" maxlength="500" name="kelly_host" id="ctl17_txtName" class="frmText" style="width:131px;">
+					</p>
+				  <p>
+					Port
+                    <input type="text" value="{{ kelly_port }}" maxlength="500" name="kelly_port" id="ctl17_txtName" class="frmText" style="width:131px;">
+                    <!-- <input type="submit" name="ctl17$btnSearch" value="Save" id="ctl17_btnSearch" class="frmButton"> -->
+					</p>
+				  <p><input type="submit" name="" value="Save all" id="ctl17_btnSearch" class="frmButton"></p>
+
+                </td>
+				  </form>
+                <td align="center" style="width: 100px">
+                </td>
+            </tr>
+        </tbody></table>
+    </p>
+        </div>
+
+    </div>
+                            <div id="pHelp" class="cbrPnlHelpContainer">
+
+
+<p>
+    <p></p><table class="Help" width="100%" cellpadding="3">
+        <tbody>
+            <tr>
+                <td class="HelpCell">
+                    <p align="justify">Help:
+<!-- This is a list of administrators. Administrators can be -->
+<!--                         created and modified here. You can assign privileges to different -->
+<!--                         administrators.<br> -->
+                    </p>
+                </td>
+
+                </tr>
+            <tr>
+                <td class="HelpCell" align="left">
+
+
+
+
+<!-- <p> Please note, that you can supply search meta-symbol '%' in -->
+<!-- the search fields. '%'&nbsp;can be located anywhere in the string -->
+<!-- and stands for 'any other symbols can be here'. Example: 'sampl%' will -->
+<!-- find all the records with words like 'sampling', 'samples', 'sampled', -->
+<!-- etc.</p> -->
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</p>
+
+    </div>
+{% endblock %}

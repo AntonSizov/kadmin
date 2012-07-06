@@ -2,9 +2,9 @@
 -define(kadmin_user_hrl, included).
 
 %% user's states
--define(MU_ACTIVE, 1).
--define(MU_BLOCKED, 2).
--define(MU_DEACTIVATED, 3).
+-define(KU_ACTIVE, 'Active').
+-define(KU_BLOCKED, 'Blocked').
+-define(KU_DEACTIVATED, 'Deactivated').
 
 %% user's access levels
 -define(AL_FULL, [system_administrator]). % lists:member(Elem, List)

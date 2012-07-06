@@ -3,6 +3,7 @@
 -compile([{parse_transform, lager_transform}]).
 
 -include("kadmin_user.hrl").
+%% -include("settings.hrl").
 
 -export([init/0, stop/1]).
 
@@ -21,23 +22,58 @@ init() ->
 
 	%% create admin if does not exist
 	create_admin(),
+	create_test(),
 
+	initialize_settings(),
     {ok, []}.
 
 stop(ListOfWatchIDs) ->
     lists:map(fun boss_news:cancel_watch/1, ListOfWatchIDs).
 
-create_admin() ->
-	Login = "admin",
-	FullName = "FirstName LastName",
-	PassHash = erlang:md5("admin"),
-	AccessLevel = undefined, %?AL_FULL	,
-	State = undefined, %?MU_ACTIVE,
-	ContactData = "yourmail@mail.com",
-	Admin = kadmin_user:new(id, Login, FullName, PassHash, AccessLevel, State, ContactData),
-	Admin:save(),
-	lager:debug("Initial admin user added").
+settings_spec() ->
+	[{"kelly_host", "127.0.0.1"},
+	 {"kelly_port", 8080}].
 
+initialize_settings() ->
+	InitSettingFun = fun(Key, Value) ->
+		case boss_db:find(kadmin_settings, [{key, 'equals', Key}]) of
+			[] ->
+				Setting = kadmin_settings:new(id, Key, Value),
+				Setting:save(),
+				lager:info("Setting: ~p was set to ~p", [Key, Value]);
+			{error, Reason} -> {error, Reason};
+			_ -> ok
+		end
+	end,
+	[InitSettingFun(Key, Value) || {Key, Value} <- settings_spec()].
+
+create_admin() ->
+	case boss_db:find(kadmin_user, [{login, 'equals', "admin"}]) of
+		[] ->
+			Login = "admin",
+			FullName = "Anton Sizov",
+			PassHash = erlang:md5("admin"),
+			AccessLevel = undefined, %?AL_FULL	,
+			State = ?KU_ACTIVE,
+			ContactData = "a.sysoff@gmail.com",
+			Admin = kadmin_user:new(id, Login, FullName, PassHash, AccessLevel, State, ContactData),
+			Admin:save(),
+			lager:debug("Superadministrator was created");
+		Any ->
+			lager:debug("Superadministrator is existing")
+	end.
+
+create_test() ->
+	Login = "test_user",
+	FullName = "Test User",
+	PassHash = erlang:md5("test"),
+	AccessLevel = undefined, %?AL_FULL	,
+	State = ?KU_ACTIVE,
+	ContactData = "testuser@gmail.com",
+	User = kadmin_user:new(id, Login, FullName, PassHash, AccessLevel, State, ContactData),
+	lager:debug("User: ~p", [User]),
+	User:save(),
+	lager:debug("Test user was created").
 
 %%%%%%%%%%% Ideas
 %    boss_news:watch("user-42.*",

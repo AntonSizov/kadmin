@@ -33,18 +33,53 @@ create('GET', []) ->
 index('GET', [], {NavSpec, User}) ->
 	Limit = 10,
 	Users = boss_db:find(kadmin_user, [], Limit),
+	UsersNumber = boss_db:count(kadmin_user),
+
+	PagesNumber =
+		case (UsersNumber rem Limit) of
+			0 ->	UsersNumber/Limit;
+			_ -> UsersNumber div Limit + 1
+		end,
+	lager:debug("PagesNumber: ~p", [PagesNumber]),
 	UserList = [proplists:delete(pass_hash, User:attributes()) || User <- Users],
 	lager:debug("User list: ~p", [UserList]),
     {ok, [
 		{your_login, User:login()},
 		NavSpec,
 		{total_rows, boss_db:count(kadmin_user)},
-		{users, UserList}
+		{users, UserList},
+		{page_numbers, lists:seq(1, PagesNumber)}
+	   	]};
+
+index('GET', [P], {NavSpec, User}) ->
+	Page = list_to_integer(P),
+	lager:debug("P: ~p", [P]),
+	Limit = 10,
+	Skip = Limit * (Page - 1),
+	Users = boss_db:find(kadmin_user, [], Limit, Skip),
+	UsersNumber = boss_db:count(kadmin_user),
+	PagesNumber =
+		case (UsersNumber rem Limit) of
+			0 ->	UsersNumber/Limit;
+			_ -> UsersNumber div Limit + 1
+		end,
+	lager:debug("PagesNumber: ~p", [PagesNumber]),
+	UserList = [proplists:delete(pass_hash, User:attributes()) || User <- Users],
+	lager:debug("User list: ~p", [UserList]),
+    {ok, [
+		{your_login, User:login()},
+		NavSpec,
+		{total_rows, boss_db:count(kadmin_user)},
+		{users, UserList},
+		{page_numbers, lists:seq(1, PagesNumber)}
 	   	]}.
 
 get_user('GET', []) ->
     ok.
 update('POST', []) ->
     ok.
-delete('POST', []) ->
-    ok.
+delete('GET', [UserId], {NavSpec, User}) ->
+	lager:debug("UserId: ~p", [UserId]),
+	Result = boss_db:delete(UserId),
+	lager:debug("boss db delete result: ~p", [Result]),
+	{redirect, "/users/index"}.
