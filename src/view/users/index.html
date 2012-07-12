@@ -22,7 +22,7 @@
         <table width="100%" class="SearchTable" cellspacing="2" cellpadding="2">
             <tbody><tr class="SearchTableCell">
                 <td style="width: 180px">
-                    <form method="get" action="/kadmin_user/create" class="_no_class" style="margin-bottom: 0em;">
+                    <form method="get" action="/users/create" class="_no_class" style="margin-bottom: 0em;">
                     <input type="submit" value="Add new admin" class="frmButton" style="height:20px;width:140px;">
                     </form>
                 </td>
@@ -55,33 +55,7 @@
                     <tbody><tr class="SearchTableCell">
                         <td align="left">
 
-<table align="left" class="cbrExport">
-    <tbody><tr align="left">
-        <td style="width: 120px;" class="field">
-            <span id="ctl17_recAdmins_ucExportReport_TitleLabel">Export file type:</span>
-        </td>
-        <td>
-            <table id="ctl17_recAdmins_ucExportReport_rblExportTypes" border="0">
-                <tbody><tr>
-                    <td><input id="ctl17_recAdmins_ucExportReport_rblExportTypes_0" type="radio" name="ctl17$recAdmins$ucExportReport$rblExportTypes" value="CSV" checked="checked"><label for="ctl17_recAdmins_ucExportReport_rblExportTypes_0">CSV</label></td><td><input id="ctl17_recAdmins_ucExportReport_rblExportTypes_1" type="radio" name="ctl17$recAdmins$ucExportReport$rblExportTypes" value="XLS"><label for="ctl17_recAdmins_ucExportReport_rblExportTypes_1">XLS</label></td><td><input id="ctl17_recAdmins_ucExportReport_rblExportTypes_2" type="radio" name="ctl17$recAdmins$ucExportReport$rblExportTypes" value="PDF"><label for="ctl17_recAdmins_ucExportReport_rblExportTypes_2">PDF</label></td><td><input id="ctl17_recAdmins_ucExportReport_rblExportTypes_3" type="radio" name="ctl17$recAdmins$ucExportReport$rblExportTypes" value="RTF"><label for="ctl17_recAdmins_ucExportReport_rblExportTypes_3">RTF</label></td>
-                </tr>
-            </tbody></table>
-        </td>
-        <td>
-            <input type="submit" name="ctl17$recAdmins$ucExportReport$btnExport" value="Export report" id="ctl17_recAdmins_ucExportReport_btnExport" class="cbrFrmButton">
-        </td>
-    </tr>
-
-</tbody></table>
 <input type="hidden" id="path2File" value="">
-<!-- <script type="text/javascript" language="javascript"> -->
-<!--     function OpenFile(fileName) { -->
-<!--         var hiddenField = document.getElementById("path2File"); -->
-<!--         hiddenField.value = fileName; -->
-<!--         var w = window.open('/mmwl_linux/UI/Reports/DownloadReportFileWindow/DownloadReportFile.html', "_blank", "height=300, width=400"); -->
-<!--         w.moveTo(screen.width / 2 - 200, screen.height / 2 - 150) -->
-<!--     } -->
-<!-- </script> -->
 
                         </td>
                         <td align="right">
@@ -103,31 +77,46 @@
 
                 <table class="Grid" cellpadding="0" cellspacing="0" rules="cols" align="center" border="1" id="ctl17_recAdmins_grdData" style="border-style:None;height:112px;width:100%;border-collapse:collapse;">
                     <tbody><tr class="HeaderRow">
-                        <td><a href="">Name</a></td><td><a href="">Contact</a></td><td><a href="">State</a></td><td>&nbsp;</td>
+                        <td>Name</td><td>Contact</td><td>State</td><td>&nbsp;</td>
                     </tr>
 
 {% if users %}
 {% for user in users %}
 
+{% if forloop.counter|divisibleby:"2" %}
+
 <tr class="GridRow">
-                        <td><a class="GridLink" href="/users/show/{{ user.id }}">{{ user.full_name }}</a></td><td align="left"><span>{{ user.contact_data }}</span></td><td><span style="color:LimeGreen;">{{ user.state }}</span></td><td><a href="/users/delete/{{ user.id }}" title="Delete" style="color:SaddleBrown;">Delete</a></td>
-                    </tr>
-{% endfor %}
+  <td><a class="GridLink" href="/users/update/{{ user.login }}">{{ user.full_name }}</a></td><td align="left"><span>{{ user.contact_data }}</span></td><td><span style={% if user.state == "Active" %}"color:LimeGreen;"{% else %}"color:Red;"{% endif %}>{{ user.state }}</span></td><td><a href="/users/delete/{{ user.login }}" title="Delete" style="color:SaddleBrown;">Delete</a>
+  </td>
+</tr>
+
+{% else %}
+
+<tr class="GridAlternativeRow">
+  <td><a class="GridLink" href="/users/update/{{ user.login }}">{{ user.full_name }}</a></td><td align="left"><span>{{ user.contact_data }}</span></td><td><span style={% if user.state == "Active" %}"color:LimeGreen;"{% else %}"color:Red;"{% endif %}>{{ user.state }}</span></td><td><a href="/users/delete/{{ user.login }}" title="Delete" style="color:SaddleBrown;">Delete</a>
+  </td>
+</tr>
+
 {% endif %}
 
-<!-- <tr class="GridAlternativeRow"> -->
-<!--                         <td><a class="GridLink" href="/mmwl_linux/default.aspx?c=AdminEdit&amp;id=9ab3dc8f-7ce4-42cb-8df7-a2191a639ff4">DDFR790</a></td><td align="left"><span>asd@asd.asd</span></td><td><span style="color:LimeGreen;">Active</span></td><td><a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl03$ctl05','')" title="Delete" style="color:SaddleBrown;">Delete</a></td> -->
-<!--                     </tr> -->
+{% endfor %}
+{% endif %}
 
                     <tr class="GridPaging">
                         <td colspan="6">
 {% if page_numbers %}
 {% for page in page_numbers %}
-<a href="index/{{ page }}">{{ page }}</a>&nbsp;
+
+{% if page == active_page %}
+<span>{{ page }}</span>&nbsp;
+{% else %}
+<a href={% url action="index" %}/{{ page }}/>{{ page }}</a>&nbsp;
+<!-- <a href="/users/index/{{ page }}">{{ page }}</a>&nbsp; -->
+{% endif %}
+
 {% endfor %}
 {% endif %}
 
-                            <!-- <span>1</span>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl01','')">2</a>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl02','')">3</a>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl03','')">4</a>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl04','')">5</a>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl05','')">6</a>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl06','')">7</a>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl07','')">8</a>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl08','')">9</a>&nbsp;<a href="javascript:__doPostBack('ctl17$recAdmins$grdData$ctl23$ctl09','')">10</a> -->
                         </td>
                     </tr>
                 </tbody></table>
@@ -147,10 +136,7 @@
 
                             <tbody><tr>
                                 <td class="field">
-                                    Total rows :
-                                </td>
-                                <td class="field">
-                                {{ total_rows }}
+                                    Total rows : {{ total_rows }}
                                 </td>
                             </tr>
 
@@ -179,21 +165,6 @@
                         created and modified here. You can assign privileges to different
                         administrators.<br>
                     </p>
-                </td>
-
-                </tr>
-            <tr>
-                <td class="HelpCell" align="left">
-
-
-
-
-<p> Please note, that you can supply search meta-symbol '%' in
-the search fields. '%'&nbsp;can be located anywhere in the string
-and stands for 'any other symbols can be here'. Example: 'sampl%' will
-find all the records with words like 'sampling', 'samples', 'sampled',
-etc.</p>
-
                 </td>
             </tr>
         </tbody>

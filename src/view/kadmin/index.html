@@ -43,7 +43,7 @@
                 <table width="100%" border="0">
                     <tbody><tr>
                         <td style="min-width:200px" align="left">
-                            Phone Numbers should be entered in International format 973xxxxxxxxx
+						  {% if boss_flash %}{% for flash in boss_flash %}{{flash.message}}{% endfor %}{% endif %}
                         </td>
                         <td style="width:300px">
 
@@ -69,6 +69,7 @@
     <tr>
         <td>
         {% block body %}
+
         <table cellspacing="0" cellpadding="0" class="cbrPageContainer">
         <tbody>
             <tr>

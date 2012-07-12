@@ -1,0 +1,107 @@
+{% extends "kadmin/index.html" %}
+{% block title %}Create new administrator{% endblock %}
+{% block p_main_container %}
+
+                            <div id="pMainContainer" class="cbrPnlMainContainer">
+
+                            <div id="ctl17_pSearchArea" onkeypress="javascript:return FireDefaultButton(event, 'ctl17_btnSearch')">
+
+
+
+<table class="Info" id="Info" width="100%">
+    <tbody><tr>
+        <td>
+            Create new administrator
+        </td>
+    </tr>
+</tbody></table>
+    <p>
+        <span id="ctl17_lError" style="color:Red;"></span>
+    </p>
+    <p>
+        <table width="100%" class="SearchTable" cellspacing="2" cellpadding="2">
+          <form method="post" action="/users/create" class="_no_class" style="margin-bottom: 0em;">
+            <tbody>
+			  <tr class="SearchTableCell">
+                <td style="width: 180px">
+                    Full Name
+                </td>
+                <td style="width: 180px">
+                    <input type="text" maxlength="500" name="full_name" id="ctl17_txtName" class="frmText" style="width:131px;">
+                </td>
+              </tr>
+
+
+			  <tr class="SearchTableCell">
+                <td style="width: 180px">
+                    Login
+                </td>
+                <td style="width: 180px">
+                    <input type="text" maxlength="500" name="login" id="ctl17_txtName" class="frmText" style="width:131px;">
+                </td>
+              </tr>
+
+
+			  <tr class="SearchTableCell">
+                <td style="width: 180px">
+                    Password
+                </td>
+                <td style="width: 180px">
+                    <input type="password" maxlength="500" name="password" id="ctl17_txtName" class="frmText" style="width:131px;">
+                </td>
+              </tr>
+
+
+			  <tr class="SearchTableCell">
+                <td style="width: 180px">
+                    State
+                </td>
+                <td style="width: 180px">
+				  <select size="1" name="state">
+                    <option value="Active" {% if user.state == "Active" %}selected{% endif %} id="ctl17_txtName" class="frmText" style="width:131px;">Active</option>
+                    <option value="Blocked" {% if user.state == "Blocked" %}selected{% endif %} id="ctl17_txtName" class="frmText" style="width:131px;">Blocked</option>
+                    <option value="Deactivated"  {% if user.state == "Deactivated" %}selected{% endif %} id="ctl17_txtName" class="frmText" style="width:131px;">Deactivated</option>
+				  </select>
+                </td>
+              </tr>
+
+
+
+			  <tr class="SearchTableCell">
+                <td style="width: 180px">
+                    Contact data
+                </td>
+                <td style="width: 180px">
+                    <input type="text" maxlength="500" name="contact_data" id="ctl17_txtName" class="frmText" style="width:131px;">
+                </td>
+              </tr>
+
+
+			  <tr class="SearchTableCell">
+                <td style="width: 180px">
+                    <input type="submit" value="Save" class="frmButton" style="height:20px;width:140px;">
+                </td>
+                <td style="width: 180px">
+                </td>
+              </tr>
+
+			</tbody>
+          </form>
+		</table>
+    </p>
+    <p>
+
+
+
+            </div>
+        </td>
+    </tr>
+</tbody></table>
+
+
+    </p>
+
+        </div>
+
+    </div>
+{% endblock %}

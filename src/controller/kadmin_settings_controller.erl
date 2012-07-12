@@ -24,4 +24,5 @@ update('POST', []) ->
 		SettingNew:save()
 	end,
 	[Update(Key) || {Key, _} <- settings_spec()],
-    {redirect, "/settings/index"}.
+	boss_flash:add(SessionID, notice, "Info", io_lib:format("Settings were updated", [])),
+    {redirect, [{action, "index"}]}.

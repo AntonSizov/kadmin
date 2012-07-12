@@ -22,7 +22,7 @@ init() ->
 
 	%% create admin if does not exist
 	create_admin(),
-	create_test(),
+	create_users_for_tests(100),
 
 	initialize_settings(),
     {ok, []}.
@@ -53,27 +53,28 @@ create_admin() ->
 			Login = "admin",
 			FullName = "Anton Sizov",
 			PassHash = erlang:md5("admin"),
-			AccessLevel = undefined, %?AL_FULL	,
 			State = ?KU_ACTIVE,
 			ContactData = "a.sysoff@gmail.com",
-			Admin = kadmin_user:new(id, Login, FullName, PassHash, AccessLevel, State, ContactData),
+			Admin = kadmin_user:new(id, Login, FullName, PassHash, State, ContactData),
 			Admin:save(),
 			lager:debug("Superadministrator was created");
 		Any ->
 			lager:debug("Superadministrator is existing")
 	end.
 
-create_test() ->
-	Login = "test_user",
-	FullName = "Test User",
-	PassHash = erlang:md5("test"),
-	AccessLevel = undefined, %?AL_FULL	,
+create_users_for_tests(0) ->
+	ok;
+create_users_for_tests(N) ->
+	Login = "test_" ++ integer_to_list(N),
+	FullName = "Test User " ++ integer_to_list(N),
+	PassHash = erlang:md5("test" ++ integer_to_list(N)),
 	State = ?KU_ACTIVE,
-	ContactData = "testuser@gmail.com",
-	User = kadmin_user:new(id, Login, FullName, PassHash, AccessLevel, State, ContactData),
+	ContactData = "testuser"  ++ integer_to_list(N) ++ "@gmail.com",
+	User = kadmin_user:new(id, Login, FullName, PassHash, State, ContactData),
 	lager:debug("User: ~p", [User]),
 	User:save(),
-	lager:debug("Test user was created").
+	lager:debug("Test user ~p was created", [Login]),
+	create_users_for_tests(N-1).
 
 %%%%%%%%%%% Ideas
 %    boss_news:watch("user-42.*",

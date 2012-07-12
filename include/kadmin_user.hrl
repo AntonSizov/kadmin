@@ -6,8 +6,8 @@
 -define(KU_BLOCKED, 'Blocked').
 -define(KU_DEACTIVATED, 'Deactivated').
 
-%% user's access levels
--define(AL_FULL, [system_administrator]). % lists:member(Elem, List)
+%% %% user's access levels
+%% -define(AL_FULL, [system_administrator]). % lists:member(Elem, List)
 
 
 -endif. % kadmin_user_hrl
