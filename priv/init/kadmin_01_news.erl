@@ -32,7 +32,7 @@ stop(ListOfWatchIDs) ->
 
 settings_spec() ->
 	[{"kelly_host", "127.0.0.1"},
-	 {"kelly_port", 8080}].
+	 {"kelly_port", "8080"}].
 
 initialize_settings() ->
 	InitSettingFun = fun(Key, Value) ->
