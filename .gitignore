@@ -1,7 +1,7 @@
 deps/
 ebin/
 log/
-console.log
-debug.log
-error.log
+console.log*
+debug.log*
+error.log*
 erl_crash.dump
