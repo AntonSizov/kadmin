@@ -19,6 +19,7 @@ init() ->
 	ok = application:start(syntax_tools),
 	ok = application:start(lager),
 	ok = application:start(inets),
+	ok = application:start(jsx),
 
 	%% create admin if does not exist
 	create_admin(),
