@@ -18,11 +18,12 @@ index('GET', [], {NavSpec, User}) ->
 update('POST', []) ->
 	Update = fun(Key) ->
 		Value = Req:post_param(Key),
-		lager:debug("Value: ~p", [Value]),
+		lager:debug("Updating ~p to: ~p", [Key, Value]),
 		[Setting] = boss_db:find(kadmin_settings, [{key, 'equals', Key}]),
 		SettingNew = Setting:set(value, Value),
 		SettingNew:save()
 	end,
-	[Update(Key) || {Key, _} <- settings_spec()],
+	lager:debug("Setting spec: ~p", [?settings_spec]),
+	[Update(Key) || {Key, _} <- ?settings_spec],
 	boss_flash:add(SessionID, notice, "Info", io_lib:format("Settings were updated", [])),
     {redirect, [{action, "index"}]}.

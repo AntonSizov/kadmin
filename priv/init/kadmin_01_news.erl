@@ -3,7 +3,7 @@
 -compile([{parse_transform, lager_transform}]).
 
 -include("kadmin_user.hrl").
-%% -include("settings.hrl").
+-include("settings.hrl").
 
 -export([init/0, stop/1]).
 
@@ -30,10 +30,6 @@ init() ->
 stop(ListOfWatchIDs) ->
     lists:map(fun boss_news:cancel_watch/1, ListOfWatchIDs).
 
-settings_spec() ->
-	[{"kelly_host", "127.0.0.1"},
-	 {"kelly_port", "8080"}].
-
 initialize_settings() ->
 	InitSettingFun = fun(Key, Value) ->
 		case boss_db:find(kadmin_settings, [{key, 'equals', Key}]) of
@@ -45,7 +41,7 @@ initialize_settings() ->
 			_ -> ok
 		end
 	end,
-	[InitSettingFun(Key, Value) || {Key, Value} <- settings_spec()].
+	[InitSettingFun(Key, Value) || {Key, Value} <- ?settings_spec].
 
 create_admin() ->
 	case boss_db:find(kadmin_user, [{login, 'equals', "admin"}]) of
