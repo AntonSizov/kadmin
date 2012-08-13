@@ -29,10 +29,11 @@ logout('GET', []) ->
     {redirect, "/login"}.
 
 create('GET', [], {NavSpec, User}) ->
-    {ok, [
-		{your_login, User:login()},
-		NavSpec
-		]};
+    {render_other,
+		[{action, "edit_form"}],
+			[{your_login, User:login()},
+			NavSpec
+			]};
 create('POST', [], {_NavSpec, _}) ->
 	Login = Req:post_param("login"),
 	FullName = Req:post_param("full_name"),
@@ -77,7 +78,7 @@ update('GET', [Login], {NavSpec, User}) ->
 			boss_flash:add(SessionID, error, "Error", io_lib:format("User ~p not found", [Login])),
 			{redirect, "/users/index"};
 		[FoundUser] ->
-		    {ok, [
+		    {render_other, [{action, "edit_form"}], [
 				{your_login, User:login()},
 				NavSpec,
 				{user, FoundUser}

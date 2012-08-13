@@ -1,17 +1,20 @@
 {% extends "kadmin/index.html" %}
+{% if user %}
 {% block title %}Update administrator{% endblock %}
+{% else %}
+{% block title %}Create new administrator{% endblock %}
+{% endif %}
+
 {% block p_main_container %}
 
-                            <div id="pMainContainer" class="cbrPnlMainContainer">
+<div id="pMainContainer" class="cbrPnlMainContainer">
 
-                            <div id="ctl17_pSearchArea" onkeypress="javascript:return FireDefaultButton(event, 'ctl17_btnSearch')">
-
-
+<div id="ctl17_pSearchArea" onkeypress="javascript:return FireDefaultButton(event, 'ctl17_btnSearch')">
 
 <table class="Info" id="Info" width="100%">
     <tbody><tr>
         <td>
-            Update administrator
+            {% if user %}Update administrator{% else %}Create new administrator{% endif %}
         </td>
     </tr>
 </tbody></table>
@@ -20,14 +23,14 @@
     </p>
     <p>
         <table width="100%" class="SearchTable" cellspacing="2" cellpadding="2">
-          <form method="post" action="/users/update/{{ user.login }}" class="_no_class" style="margin-bottom: 0em;">
+          <form method="post" action="/users/{% if user %}update/{{ user.login }}{% else %}create{% endif %}" class="_no_class" style="margin-bottom: 0em;">
             <tbody>
 			  <tr class="SearchTableCell">
                 <td style="width: 180px">
                     Full Name
                 </td>
                 <td style="width: 180px">
-                    <input type="text" value="{{ user.full_name }}" maxlength="500" name="full_name" id="ctl17_txtName" class="frmText" style="width:131px;">
+                    <input type="text" {% if user %}value="{{ user.full_name }}"{% endif %} maxlength="500" name="full_name" id="ctl17_txtName" class="frmText" style="width:131px;">
                 </td>
               </tr>
 
@@ -37,7 +40,7 @@
                     Login
                 </td>
                 <td style="width: 180px">
-                    <input type="text" value="{{ user.login }}" maxlength="500" name="login" id="ctl17_txtName" class="frmText" style="width:131px;">
+                    <input type="text" {% if user %}value="{{ user.login }}"{% endif %} maxlength="500" name="login" id="ctl17_txtName" class="frmText" style="width:131px;">
                 </td>
               </tr>
 
@@ -47,7 +50,7 @@
                     Password
                 </td>
                 <td style="width: 180px">
-                    <input type="password" value="hidden" maxlength="500" name="password" id="ctl17_txtName" class="frmText" style="width:131px;">
+                    <input type="password" {% if user %}value="hidden"{% endif %} maxlength="500" name="password" id="ctl17_txtName" class="frmText" style="width:131px;">
                 </td>
               </tr>
 
@@ -66,12 +69,13 @@
               </tr>
 
 
+
 			  <tr class="SearchTableCell">
                 <td style="width: 180px">
                     Contact data
                 </td>
                 <td style="width: 180px">
-                    <input type="text" value="{{ user.contact_data }}" maxlength="500" name="contact_data" id="ctl17_txtName" class="frmText" style="width:131px;">
+                    <input type="text" {% if user %}value="{{ user.contact_data }}"{% endif %} maxlength="500" name="contact_data" id="ctl17_txtName" class="frmText" style="width:131px;">
                 </td>
               </tr>
 
@@ -103,21 +107,4 @@
         </div>
 
     </div>
-<!-- <div id="pHelp" class="cbrPnlHelpContainer"> -->
-<!-- <p> -->
-<!--     <p></p> -->
-<!--     <table class="Help" width="100%" cellpadding="3"> -->
-<!--         <tbody> -->
-<!--             <tr> -->
-<!--                 <td class="HelpCell"> -->
-<!--                     <p align="justify">Help: This is a list of administrators. Administrators can be -->
-<!--                         created and modified here. You can assign privileges to different -->
-<!--                         administrators.<br> -->
-<!--                     </p> -->
-<!--                 </td> -->
-<!--             </tr> -->
-<!--         </tbody> -->
-<!--     </table> -->
-<!-- </p> -->
-<!-- </div> -->
 {% endblock %}
