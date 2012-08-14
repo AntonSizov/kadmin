@@ -1,0 +1,235 @@
+{% extends "kadmin/index.html" %}
+
+{% block title %}
+{% if gateway %}
+Edit gateway
+{% else %}
+Create gateway
+{% endif %}
+{% endblock %}
+
+{% block p_main_container %}
+
+<div id="pMainContainer" class="cbrPnlMainContainer">
+
+  <div id="ctl17_pSearchArea" onkeypress="javascript:return FireDefaultButton(event, 'ctl17_btnSearch')">
+
+	<table class="Info" id="Info" width="100%">
+      <tbody><tr>
+          <td>
+{% if gateway %}
+            Edit gateway
+{% else %}
+            Create gateway
+{% endif %}
+          </td>
+		</tr>
+	</tbody></table>
+    <p>
+      <span id="ctl17_lError" style="color:Red;"></span>
+    </p>
+    <p>
+      <table width="100%" class="SearchTable" cellspacing="2" cellpadding="2">
+        <form method="post" {% if gateway %}action="/gateways/update/{{ gateway.id }}"{% else %}action="/gateways/create"{% endif %} class="_no_class" style="margin-bottom: 0em;">
+          <tbody>
+
+			{% if gateway %}
+			<tr class="SearchTableCell">
+              <td style="width: 180px;height:25px;">
+                ID
+              </td>
+              <td style="width: 180px">
+				{{ gateway.id }}
+              </td>
+            </tr>
+			{% endif %}
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Name
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="name" id="ctl17_txtName" class="frmText" style="width:131px;" value="{% if gateway %}{{ gateway.name }}{% endif %}">
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                RPS
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="rps" id="ctl17_txtName" class="frmText" style="width:131px;" value="{% if gateway %}{{ gateway.rps }}{% endif %}">
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                <input type="submit" value="Save" class="frmButton" style="height:20px;width:140px;">
+              </td>
+              <td style="width: 180px">
+              </td>
+            </tr>
+
+		  </tbody>
+        </form>
+	  </table>
+    </p>
+
+
+<!-- Connections section -->
+
+<!-- Update & delete connection -->
+<p>Connections</p>
+<p>
+      <table width="100%" class="SearchTable" cellspacing="2" cellpadding="2">
+          <tbody>
+			<!-- Table headers -->
+			<tr class="SearchTableCell">
+              <td style="width: 180px;height:25px;">
+                id
+              </td>
+              <td style="width: 180px">
+				type
+              </td>
+              <td style="width: 180px">
+				addr
+              </td>
+              <td style="width: 180px">
+				port
+              </td>
+              <td style="width: 180px">
+				sys_id
+              </td>
+              <td style="width: 180px">
+				pass
+              </td>
+              <td style="width: 180px">
+				sys_type
+              </td>
+              <td style="width: 180px">
+				ton
+              </td>
+              <td style="width: 180px">
+				npi
+              </td>
+              <td style="width: 180px">
+				addr_range
+              </td>
+              <td style="width: 180px">
+
+              </td>
+              <td style="width: 180px">
+
+              </td>
+            </tr>
+
+			{% for connection in gateway.connections %}
+
+			<form method="post" action="{% url action="update_connection" %}/{{ gateway.id }}/{{ connection.id }}" class="_no_class" style="margin-bottom: 0em;">
+			<tr class="SearchTableCell">
+              <td style="width: 180px;height:25px;">
+                {{ connection.id }}
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="type" id="ctl17_txtName" class="frmText" style="width:100px;" value="{{ connection.type }}">
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="addr" id="ctl17_txtName" class="frmText" style="width:100px;" value="{{ connection.addr }}">
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="port" id="ctl17_txtName" class="frmText" style="width:100px;" value="{{ connection.port }}">
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="sys_id" id="ctl17_txtName" class="frmText" style="width:100px;" value="{{ connection.sys_id }}">
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="pass" id="ctl17_txtName" class="frmText" style="width:100px;" value="{{ connection.pass }}">
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="sys_type" id="ctl17_txtName" class="frmText" style="width:100px;" value="{{ connection.sys_type }}">
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="addr_ton" id="ctl17_txtName" class="frmText" style="width:100px;" value="{{ connection.addr_ton }}">
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="addr_npi" id="ctl17_txtName" class="frmText" style="width:100px;" value="{{ connection.addr_npi }}">
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="addr_range" id="ctl17_txtName" class="frmText" style="width:100px;" value="{{ connection.addr_range }}">
+              </td>
+              <td style="width: 180px">
+                <input type="submit" value="Save" class="frmButton" style="height:20px;width:140px;">
+              </td>
+              <td style="width: 180px">
+				<a href="{% url action="delete_connection" %}/{{ gateway.id }}/{{ connection.id }}">Delete</a>
+              </td>
+            </tr>
+        </form>
+
+			{% endfor %}
+
+
+<!-- Add new connection section -->
+			<form method="post" action="{% url action="create_connection" %}/{{ gateway.id }}" class="_no_class" style="margin-bottom: 0em;">
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px;height:25px;">
+
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="type" id="ctl17_txtName" class="frmText" style="width:100px;" value="">
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="addr" id="ctl17_txtName" class="frmText" style="width:100px;" value="">
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="port" id="ctl17_txtName" class="frmText" style="width:100px;" value="">
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="sys_id" id="ctl17_txtName" class="frmText" style="width:100px;" value="">
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="pass" id="ctl17_txtName" class="frmText" style="width:100px;" value="">
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="sys_type" id="ctl17_txtName" class="frmText" style="width:100px;" value="">
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="addr_ton" id="ctl17_txtName" class="frmText" style="width:100px;" value="">
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="addr_npi" id="ctl17_txtName" class="frmText" style="width:100px;" value="">
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="addr_range" id="ctl17_txtName" class="frmText" style="width:100px;" value="">
+              </td>
+              <td style="width: 180px">
+                <input type="submit" value="Add new" class="frmButton" style="height:20px;width:140px;">
+              </td>
+              <td style="width: 180px">
+
+              </td>
+            </tr>
+			</form>
+<!-- new connection section end -->
+
+		  </tbody>
+ 	  </table>
+</p>
+
+
+
+    <p>
+  </div>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+</p>
+
+</div>
+
+</div>
+{% endblock %}

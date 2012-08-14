@@ -21,9 +21,6 @@ get_navigation() ->
                     [{name, "Gateways"},
                     {link, "/gateways/index"}],
 
-                    [{name, "Connections"},
-                    {link, "/connections/index"}],
-
                     [{name, "Networks"},
                     {link, "/networks/index"}],
 

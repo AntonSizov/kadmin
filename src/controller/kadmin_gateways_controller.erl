@@ -9,24 +9,60 @@ before_(_) ->
     auth_lib:require_authentication(SessionID).
 
 index('GET', [], {NavSpec, User}) ->
-	[Host] = boss_db:find(kadmin_settings, [{key, 'equals', "kelly_host"}]),
-	[Port] = boss_db:find(kadmin_settings, [{key, 'equals', "kelly_port"}]),
-	lager:debug("Host: ~p, Port: ~p", [Host:value(), Port:value()]),
-	Url = "http://10.10.0.155:8080/gateways",
-	Result = httpc:request(get, {Url, []}, [], []),
-	lager:debug("Getway request result: ~p", [Result]),
+	{ok, [{_, Gateways}]} = k_lib:get_gtws(),
+	lager:debug("Gateways: ~p", [Gateways]),
+	Total = length(Gateways),
     {ok, [
+		{gateways, Gateways},
 		{your_login, User:login()},
+		{total_rows, Total},
+		{active_page, 1},
+		{page_numbers, [1]},
 		NavSpec]}.
 
-%% update('POST', []) ->
-%% 	Update = fun(Key) ->
-%% 		Value = Req:post_param(Key),
-%% 		lager:debug("Value: ~p", [Value]),
-%% 		[Setting] = boss_db:find(kadmin_settings, [{key, 'equals', Key}]),
-%% 		SettingNew = Setting:set(value, Value),
-%% 		SettingNew:save()
-%% 	end,
-%% 	[Update(Key) || {Key, _} <- settings_spec()],
-%% 	boss_flash:add(SessionID, notice, "Info", io_lib:format("Settings were updated", [])),
-%%     {redirect, [{action, "index"}]}.
+delete('GET', [ID], {_NavSpec, _}) ->
+	boss_flash:add(SessionID, notice, "Action result", io_lib:format("Gateway ~p was successfully deleted", [ID])),
+	ok = k_lib:delete_gtw(ID),
+	{redirect, [{action, "index"}]}.
+
+
+create('GET', [], {NavSpec, User}) ->
+    {render_other, [{action, "edit_form"}], [
+		{your_login, User:login()},
+		NavSpec
+		]};
+create('POST', [], {_NavSpec, _User}) ->
+	Name = Req:post_param("name"),
+	RPS = Req:post_param("rps"),
+	{ok, ID} = k_lib:create_gtw(Name, RPS),
+	{redirect, [{action, "update"}, {id, binary_to_list(ID)}]}.
+
+
+update('GET', [ID], {NavSpec, User}) ->
+	{ok, Gateway}  = k_lib:get_gtw(ID),
+	lager:debug("Gateway: ~p", [Gateway]),
+    {render_other, [{action, "edit_form"}], [
+		{your_login, User:login()},
+		NavSpec,
+		{gateway, Gateway}
+	   	]};
+update('POST', [ID], {_NavSpec, _User}) ->
+	Name = Req:post_param("name"),
+	RPS = Req:post_param("rps"),
+	{ok, _Gateway} = k_lib:update_gtw(ID, Name, RPS),
+	{redirect, [{action, "update"}, {id, ID}]}.
+
+
+delete_connection('GET', [GtwID, ConID], _) ->
+	ok = k_lib:del_connection(GtwID, ConID),
+	{redirect, [{action, "update"}, {id, GtwID}]}.
+
+update_connection('POST', [GtwID, ConnID], _) ->
+	{ok, _Connection} = k_lib:update_connection(GtwID, ConnID, Req),
+	{redirect, [{action, "update"}, {id, GtwID}]}.
+
+create_connection('POST', [GtwID], _) ->
+	{ok, _Connection} = k_lib:create_connection(GtwID, Req),
+	{redirect, [{action, "update"}, {id, GtwID}]}.
+
+
