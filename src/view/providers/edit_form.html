@@ -1,0 +1,136 @@
+{% extends "kadmin/index.html" %}
+
+{% block title %}
+{% if provider %}
+Edit provider
+{% else %}
+Create provider
+{% endif %}
+{% endblock %}
+
+{% block p_main_container %}
+
+<div id="pMainContainer" class="cbrPnlMainContainer">
+
+  <div id="ctl17_pSearchArea" onkeypress="javascript:return FireDefaultButton(event, 'ctl17_btnSearch')">
+
+	<table class="Info" id="Info" width="100%">
+      <tbody><tr>
+          <td>
+{% if provider %}
+            Edit provider
+{% else %}
+            Create provider
+{% endif %}
+          </td>
+		</tr>
+	  </tbody>
+	</table>
+
+    <p>
+      <span id="ctl17_lError" style="color:Red;"></span>
+    </p>
+
+    <p>
+      <table width="100%" class="SearchTable" cellspacing="2" cellpadding="2">
+        <form method="post" {% if provider %}action="{% url action="update" %}/{{ provider.id }}"{% else %}action="{% url action="create" %}"{% endif %} class="_no_class" style="margin-bottom: 0em;">
+          <tbody>
+
+			{% if provider %}
+			<tr class="SearchTableCell">
+              <td style="width: 180px;height:25px;">
+                ID
+              </td>
+              <td style="width: 180px">
+				{{ provider.id }}
+              </td>
+            </tr>
+			{% endif %}
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Gateway
+              </td>
+              <td style="width: 180px">
+
+				<select name="gateway">
+				  {% if provider %}
+
+				  {% for gateway in gateways %}
+				  <option value="{{ gateway.id }}" {% if provider.gateway == gateway.id %}selected{% endif %}>{{ gateway.name }} {{ gateway.id }}</option>
+				  {% endfor %}
+
+				  {% else %}
+
+				  <option selected>Choose gateway</option>
+				  {% for gateway in gateways %}
+				  <option value="{{ gateway.id }}" >{{ gateway.name }} {{ gateway.id }}</option>
+				  {% endfor %}
+
+				  {% endif %}
+				</select>
+
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Bulk gateway
+              </td>
+              <td style="width: 180px">
+
+				<select name="bulk_gateway">
+				  {% if provider %}
+
+				  {% for gateway in gateways %}
+				  <option value="{{ gateway.id }}" {% if provider.bulk_gateway == gateway.id %}selected{% endif %}>{{ gateway.name }} {{ gateway.id }}</option>
+				  {% endfor %}
+
+				  {% else %}
+
+				  <option selected>Choose gateway</option>
+				  {% for gateway in gateways %}
+				  <option value="{{ gateway.id }}" >{{ gateway.name }} {{ gateway.id }}</option>
+				  {% endfor %}
+
+				  {% endif %}
+				</select>
+
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Receipts supported
+              </td>
+              <td style="width: 180px">
+				<select name="receipts_supported">
+				{% if provider %}
+				  <option value="true" {% if provider.receipts_supported == "true" %}selected{% endif %}>true</option>
+				  <option value="false" {% if provider.receipts_supported == "false" %}selected{% endif %}>false</option>
+				{% else %}
+				  <option selected>Choose</option>
+				  <option value="true">true</option>
+				  <option value="false">false</option>
+				{% endif %}
+				</select>
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                <input type="submit" value="Save" class="frmButton" style="height:20px;width:140px;">
+              </td>
+              <td style="width: 180px">
+              </td>
+            </tr>
+
+		  </tbody>
+        </form>
+	  </table>
+    </p>
+
+</div>
+
+</div>
+{% endblock %}

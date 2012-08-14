@@ -11,7 +11,13 @@
 
 	create_connection/2,
 	update_connection/3,
-	del_connection/2
+	del_connection/2,
+
+	get_providers/0,
+	get_provider/1,
+	create_provider/1,
+	update_provider/2,
+	del_provider/1
 ]).
 
 -record(k_props, {
@@ -19,6 +25,71 @@
 	port :: string(),
 	timeout :: string()
 }).
+
+update_provider(ID, Req) ->
+	Gtw = Req:post_param("gateway"),
+	BulkGtw = Req:post_param("bulk_gateway"),
+	ReceiptsSupported = Req:post_param("receipts_supported"),
+	ReqBody = "gateway=" ++ Gtw ++ "&bulk_gateway=" ++ BulkGtw ++ "&receipts_supported=" ++ ReceiptsSupported,
+	{ok, KProps} = get_kelly_props(),
+	Host = KProps#k_props.host,
+	Port = KProps#k_props.port,
+	Url = "http://" ++ Host ++ ":" ++ Port ++ "/providers/" ++ ID,
+	lager:debug("Url: ~p, ReqBody: ~p", [Url, ReqBody]),
+	{ok, {{_, 200, _}, _Headers, Body}} =
+	httpc:request(put,	{Url, [], "application/x-www-form-urlencoded", ReqBody},[],[{body_format, binary}]),
+	Provider = jsx:decode(Body),
+	{ok, Provider}.
+
+
+get_provider(ID) ->
+	{ok, KProps} = get_kelly_props(),
+	Host = KProps#k_props.host,
+	Port = KProps#k_props.port,
+	Timeout = KProps#k_props.timeout,
+	Url = "http://" ++ Host ++ ":" ++ Port ++ "/providers/" ++ ID,
+	lager:debug("Url: ~p", [Url]),
+	{ok, {_StatusLine, _Headers, Body}} = httpc:request(get, {Url, []}, [{timeout, Timeout}, {connection_timeout, Timeout}], [{body_format, binary}]),
+	Provider = jsx:decode(Body),
+	{ok, Provider}.
+
+get_providers() ->
+	{ok, KProps} = get_kelly_props(),
+	Host = KProps#k_props.host,
+	Port = KProps#k_props.port,
+	Timeout = KProps#k_props.timeout,
+	Url = "http://" ++ Host ++ ":" ++ Port ++ "/providers",
+	lager:debug("Url: ~p", [Url]),
+	{ok, {_StatusLine, _Headers, Body}} = httpc:request(get, {Url, []}, [{timeout, Timeout}, {connection_timeout, Timeout}], [{body_format, binary}]),
+	lager:debug("Body: ~p", [Body]),
+	[{_, Providers}] = jsx:decode(Body),
+	{ok, Providers}.
+
+create_provider(Req) ->
+	Gtw = Req:post_param("gateway"),
+	BulkGtw = Req:post_param("bulk_gateway"),
+	ReceiptsSupported = Req:post_param("receipts_supported"),
+	ReqBody = "gateway=" ++ Gtw ++ "&bulk_gateway=" ++ BulkGtw ++ "&receipts_supported=" ++ ReceiptsSupported,
+	{ok, KProps} = get_kelly_props(),
+	Host = KProps#k_props.host,
+	Port = KProps#k_props.port,
+	Url = "http://" ++ Host ++ ":" ++ Port ++ "/providers",
+	lager:debug("Url: ~p, ReqBody: ~p", [Url, ReqBody]),
+	{ok, {_StatusLine, _Headers, Body}} =
+	httpc:request(post,	{Url, [], "application/x-www-form-urlencoded", ReqBody},[],[{body_format, binary}]),
+	Provider = jsx:decode(Body),
+	ID = proplists:get_value(<<"id">>, Provider),
+	{ok, ID}.
+
+del_provider(ID) ->
+	{ok, KProps} = get_kelly_props(),
+	Host = KProps#k_props.host,
+	Port = KProps#k_props.port,
+	Url = "http://" ++ Host ++ ":" ++ Port ++ "/providers/" ++ ID,
+	lager:debug("Url: ~p", [Url]),
+	{ok, {{_Ver, 204, _Message}, _Headers, _Body}} =
+	httpc:request(delete, {Url, []}, [], [{body_format, binary}]),
+	ok.
 
 update_connection(GtwID, ConnID, Req) ->
 	Type = Req:post_param("type"),
@@ -119,8 +190,8 @@ get_gtws() ->
 	Url = "http://" ++ Host ++ ":" ++ Port ++ "/gateways",
 	lager:debug("Url: ~p", [Url]),
 	{ok, {_StatusLine, _Headers, Body}} = httpc:request(get, {Url, []}, [{timeout, Timeout}, {connection_timeout, Timeout}], [{body_format, binary}]),
-	Result = jsx:decode(Body),
-	{ok, Result}.
+	[{_, Gateways}] = jsx:decode(Body),
+	{ok, Gateways}.
 
 get_gtw(ID) ->
 	{ok, KProps} = get_kelly_props(),

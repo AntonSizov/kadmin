@@ -9,7 +9,7 @@ before_(_) ->
     auth_lib:require_authentication(SessionID).
 
 index('GET', [], {NavSpec, User}) ->
-	{ok, [{_, Gateways}]} = k_lib:get_gtws(),
+	{ok, Gateways} = k_lib:get_gtws(),
 	lager:debug("Gateways: ~p", [Gateways]),
 	Total = length(Gateways),
     {ok, [
