@@ -28,13 +28,9 @@ logout('GET', []) ->
     boss_session:delete_session(SessionID),
     {redirect, "/login"}.
 
-create('GET', [], {NavSpec, User}) ->
-    {render_other,
-		[{action, "edit_form"}],
-			[{your_login, User:login()},
-			NavSpec
-			]};
-create('POST', [], {_NavSpec, _}) ->
+create('GET', []) ->
+    {render_other, [{action, "edit_form"}]};
+create('POST', []) ->
 	Login = Req:post_param("login"),
 	FullName = Req:post_param("full_name"),
 	PassHash = erlang:md5(Req:post_param("password")),
@@ -43,16 +39,15 @@ create('POST', [], {_NavSpec, _}) ->
 	User = kadmin_user:new(id, Login, FullName, PassHash, State, ContactData),
 	User:save(),
 	boss_flash:add(SessionID, notice, "Info", io_lib:format("New user ~p sucessfully created", [Login])),
- 	{redirect, "/users/index"}.
+	{redirect, [{action, "update"}, {login, Login}]}.
 
-index('GET', [], {_NavSpec, _User}) ->
-	{redirect, "/users/index/1/"};
-
-index('GET', [P], {NavSpec, User}) ->
-	Page = list_to_integer(P),
-	lager:debug("P: ~p", [P]),
+index('GET', []) ->
+	{redirect, [{action, "index"}, {page, 1}]};
+index('GET', [Page]) ->
+	IPage = list_to_integer(Page),
+	lager:debug("P: ~p", [Page]),
 	Limit = 10,
-	Skip = Limit * (Page - 1),
+	Skip = Limit * (IPage - 1),
 	Users = boss_db:find(kadmin_user, [], Limit, Skip),
 	UsersNumber = boss_db:count(kadmin_user),
 	PagesNumber = trunc(
@@ -64,31 +59,27 @@ index('GET', [P], {NavSpec, User}) ->
 	UserList = [proplists:delete(pass_hash, U:attributes()) || U <- Users],
 	lager:debug("User list: ~p", [UserList]),
     {ok, [
-		{your_login, User:login()},
-		NavSpec,
 		{total_rows, boss_db:count(kadmin_user)},
 		{users, UserList},
 		{page_numbers, lists:seq(1, PagesNumber)},
-		{active_page, list_to_integer(P)}
+		{active_page, IPage}
 	   	]}.
 
-update('GET', [Login], {NavSpec, User}) ->
+update('GET', [Login]) ->
 	case boss_db:find(kadmin_user, [{login, 'equals', Login}]) of
 		[] ->
 			boss_flash:add(SessionID, error, "Error", io_lib:format("User ~p not found", [Login])),
-			{redirect, "/users/index"};
+			{redirect, [{action, "index"}]};
 		[FoundUser] ->
 		    {render_other, [{action, "edit_form"}], [
-				{your_login, User:login()},
-				NavSpec,
 				{user, FoundUser}
 			   	]}
 	end;
-update('POST', [Login], {_NavSpec, _User}) ->
+update('POST', [Login]) ->
 	case boss_db:find(kadmin_user, [{login, 'equals', Login}]) of
 		[] ->
 			boss_flash:add(SessionID, error, "Error", io_lib:format("User ~p not found", [Login])),
-			{redirect, "/users/index"};
+			{redirect, [{action, "index"}]};
 		[FoundUser] ->
    			NewLogin = Req:post_param("login"),
 			FullName = Req:post_param("full_name"),
@@ -98,14 +89,14 @@ update('POST', [Login], {_NavSpec, _User}) ->
 			UpdatedUser = FoundUser:set([{login, NewLogin}, {full_name, FullName}, {pass_hash, PassHash}, {state, State}, {contact_data, ContactData}]),
 			UpdatedUser:save(),
 			boss_flash:add(SessionID, notice, "Info", io_lib:format("User ~p sucessfully updated", [Login])),
- 			{redirect, "/users/update/" ++ NewLogin}
+ 			{redirect, [{action, "update"}, {login, NewLogin}]}
 	end.
 
 
-delete('GET', ["admin"], {_NavSpec, _}) ->
+delete('GET', ["admin"]) ->
 	boss_flash:add(SessionID, error, "Error", "You cann't remove system user account \"admin\""),
 	{redirect, [{action, "index"}]};
-delete('GET', [Login], {_NavSpec, _}) ->
+delete('GET', [Login]) ->
 	case boss_db:find(kadmin_user, [{login, 'equals', Login}]) of
 		[] ->
 			lager:debug("User not found"),

@@ -7,10 +7,95 @@
   <link href="/static/css/kadmin.css" id="MMWLStyles" type="text/css" rel="stylesheet" />
   <link href="/static/css/calendar.css" type="text/css" rel="stylesheet" />
   {% endblock %}
-    <script src="/static/js/jquery.js" type="text/javascript"></script>
+    <script src="/static/js/jquery-1.8.0.min.js" type="text/javascript"></script>
     <script src="/static/js/BackspaceCheck.js" type="text/javascript"></script>
     <script src="/static/js/DataUtils.js" type="text/javascript" language="javascript"></script>
     <script src="/static/js/common.js" type="text/javascript"></script>
+
+<!-- Customer networks -->
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#add_network_id').click(function() {
+    $('#available_network_ids option:selected').each(function(el) {
+      $(this).appendTo('#customer_network_ids');
+    });
+  });
+
+  $('#remove_network_id').click(function() {
+    $('#customer_network_ids option:selected').each(function(el) {
+      $(this).appendTo('#available_network_ids');
+    });
+  });
+});
+</script>
+
+<!-- Customer originators -->
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#add_originator').click(function() {
+    $('#customer_originators').append($('<option></option>').val($('#new_customer_originator').val()).html($('#new_customer_originator').val()));
+  });
+
+  $('#remove_originator').click(function() {
+    $('#customer_originators option:selected').remove();
+  });
+});
+</script>
+
+<!-- Customer post request -->
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#sbm_customer').click(function() {
+    var value = '';
+    $('#customer_network_ids option').each(function()
+    {
+      value += $(this).val() + ';';
+    });
+    $('#sbm_customer_networks').val(value);
+
+    var value = '';
+    $('#customer_originators option').each(function()
+    {
+      value += $(this).val() + ';';
+    });
+    $('#sbm_customer_originators').val(value);
+
+  });
+});
+</script>
+
+<!-- User permitted smpp types -->
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#add_user_smpp_type').click(function() {
+    $('#available_smpp_types option:selected').each(function(el) {
+      $(this).appendTo('#user_smpp_types');
+    });
+  });
+
+  $('#remove_user_smpp_type').click(function() {
+    $('#user_smpp_types option:selected').each(function(el) {
+      $(this).appendTo('#available_smpp_types');
+    });
+  });
+});
+</script>
+
+<!-- User post request -->
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#sbm_user').click(function() {
+    var value = '';
+    $('#user_smpp_types option').each(function()
+    {
+      value += $(this).val() + ';';
+    });
+    $('#sbm_user_smpp_types').val(value);
+
+  });
+});
+</script>
+
 </head>
 <body id="body" onkeydown="return checkBackSpace(event);">
 
@@ -29,7 +114,7 @@
                 <table id="AutoNumber1" cellspacing="0" cellpadding="0">
                     <tr>
                         <td align="left" width="50%">
-						  <div style="font-size: 21pt;color: red;font-weight: bold;display:table-cell; vertical-align:middle;">OpenAlley Admin Interface</div>
+						  <div style="font-size: 18pt;color: cian;font-weight:bold;display:table-cell; vertical-align:middle;"><p style="margin:5px">OpenAlley Admin Interface</p></div>
                             <!-- <img id="LoginAdmin1_PageHeader1_LogoUrlImage" border="0" hspace="10" src="/static/images/logo.gif" style="border-width:0px;" /> -->
                         </td>
                         <td align="right" width="50%">
@@ -37,7 +122,7 @@
                     </tr>
                 </table>
             </div>
-            {% if your_login %}
+            {% if _before.user %}
             <div id="PageHeader1_pLoggedOn" class="cbrLoggedOn">
 
                 <table width="100%" border="0">
@@ -54,10 +139,9 @@
                             </div>
                         </td>
                         <td>
-                            <!--<a href="javascript:__doPostBack('PageHeader1$btnChangtePassword','')" id="PageHeader1_btnChangtePassword">Change password</a> -->
                         </td>
                         <td align="right">
-                            <a href="/logout">{% trans "Log off" %} {{ your_login }}</a>
+                            <a href="/logout">{% trans "Log off" %} {{ _before.user.login }}</a>
                         </td>
                     </tr>
                 </tbody></table>
@@ -104,10 +188,10 @@
                         }
                 </script>
 
-                {% if navigation %}
+                {% if _before.navigation %}
                 <td width="210" valign="top">
                     <div id="pNavigator" class="cbrPnlNavigator">
-                        {% for item in navigation %}
+                        {% for item in _before.navigation %}
                         <div class="accessLevel">
                             <table cellpadding="2" cellspacing="0" class="navHeader">
                                 <tr>

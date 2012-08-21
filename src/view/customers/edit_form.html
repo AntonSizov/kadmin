@@ -1,0 +1,311 @@
+{% extends "kadmin/index.html" %}
+
+{% block title %}
+{% if customer %}
+Edit customer
+{% else %}
+Create customer
+{% endif %}
+{% endblock %}
+
+{% block p_main_container %}
+
+<div id="pMainContainer" class="cbrPnlMainContainer">
+
+  <div id="ctl17_pSearchArea" onkeypress="javascript:return FireDefaultButton(event, 'ctl17_btnSearch')">
+
+	<table class="Info" id="Info" width="100%">
+      <tbody><tr>
+          <td>
+{% if customer %}
+            Edit customer
+{% else %}
+            Create customer
+{% endif %}
+          </td>
+		</tr>
+	</tbody></table>
+    <p>
+      <span id="ctl17_lError" style="color:Red;"></span>
+    </p>
+    <p>
+      <table width="100%" class="SearchTable" cellspacing="2" cellpadding="2">
+        <form method="post" action="{% if customer %}{% url action="update" customer_id=customer.id %}{% else %}{% url action="create" %}{% endif %}" class="_no_class" style="margin-bottom: 0em;">
+          <tbody>
+
+			{% if customer %}
+			<tr class="SearchTableCell">
+              <td style="width: 180px;height:25px;">
+                Customer ID
+              </td>
+              <td style="width: 180px">
+				{{ customer.id }}
+              </td>
+            </tr>
+			{% endif %}
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                System ID
+              </td>
+              <td style="width: 180px">
+				{% if customer %}
+				{{ customer.system_id }}
+				{% else %}
+                <input type="text" maxlength="500" name="system_id" id="ctl17_txtName" class="frmText" style="width:131px;" value="">
+				{% endif %}
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Name
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="name" id="ctl17_txtName" class="frmText" style="width:131px;" value="{% if customer %}{{ customer.name }}{% endif %}">
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Originators
+              </td>
+              <td style="width: 180px">
+				<table><tr><td>
+				<select id="customer_originators" size="2" style="width:150px;">
+				  {% if customer %}
+				  {% for originator in customer.originators %}
+				  <option>{{ originator.addr }},{{ originator.ton }},{{ originator.npi }}</option>
+				  {% endfor %}
+				  {% endif %}
+				</select>
+                <input id="sbm_customer_originators" type="text" maxlength="500" name="originators" id="ctl17_txtName" class="frmText" style="width:131px;display:none;">
+				</td><td>
+				  <a href="javascript:;" id="remove_originator">remove</a>
+				</td><td>
+				  <input type="text" id="new_customer_originator">
+				  <a href="javascript:;" id="add_originator">add</a>
+				</td></tr></table>
+
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Default originator
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="default_originator" id="ctl17_txtName" class="frmText" style="width:131px;" value="{% if customer %}{{ customer.default_originator.addr }},{{ customer.default_originator.ton }},{{ customer.default_originator.npi }}{% endif %}">
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Networks
+              </td>
+              <td style="width: 180px">
+				<table>
+				  <tr><td>
+					  Customers networks
+				  </td><td>
+				  </td><td>
+					  Available networks
+				  </td></tr>
+				  <tr><td>
+				<select style="width:300px" multiple="multiple" id="customer_network_ids" size="5">
+				  {% if customer %}
+				  {% for network in customer.networks %}
+				  <option value="{{ network }}">{{ network }}</option>
+				  {% endfor %}
+				  {% endif %}
+				</select>
+				</td><td>
+				  <a href="javascript:;" id="remove_network_id">remove -></a>
+				  </br></br>
+				  <a href="javascript:;" id="add_network_id"><- add</a>
+				</td><td>
+				  <select style="width:300px" multiple="multiple" id="available_network_ids" size="5">
+				  {% if customer %}
+				  {% for network in networks %}
+				  {% if network.id not in customer.networks %}
+				  <option value="{{ network.id }}">{{ network.id }}</option>
+				  {% endif %}
+				  {% endfor %}
+
+				  {% else %}
+
+				  {% for network in networks %}
+				  <option value="{{ network.id }}">{{ network.id }}</option>
+				  {% endfor %}
+
+				  {% endif %}
+
+				  </select>
+				</td></tr></table>
+                <input id="sbm_customer_networks" type="text" maxlength="500" name="networks" id="customer_networks" class="frmText" style="display:none;">
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Default provider ID
+              </td>
+              <td style="width: 180px">
+				<select name="default_provider_id">
+				  {% if customer %}
+
+				  {% for provider in providers %}
+				  <option value="{{ provider.id }}" {% if customer.default_provider_id == provider.id %}selected{% endif %}>{{ provider.id }}</option>
+				  {% endfor %}
+
+				  {% else %}
+
+				  <option selected>Choose provider</option>
+				  {% for provider in providers %}
+				  <option value="{{ provider.id }}" >{{ provider.id }}</option>
+				  {% endfor %}
+
+				  {% endif %}
+				</select>
+
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Receipts allowed
+              </td>
+              <td style="width: 180px">
+				<select name="receipts_allowed">
+				  {% if customer %}
+
+				  <option value="false" {% if customer.receipts_allowed == "false" %}selected{% endif %}>false</option>
+				  <option value="true" {% if customer.receipts_allowed == "true" %}selected{% endif %}>true</option>
+
+				  {% else %}
+
+				  <option value="false">false</option>
+				  <option value="true" selected>true</option>
+
+				  {% endif %}
+				</select>
+
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Default validity
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="default_validity" id="ctl17_txtName" class="frmText" style="width:131px;" value="{% if customer %}{{ customer.default_validity }}{% endif %}">
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Max validity
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="max_validity" id="ctl17_txtName" class="frmText" style="width:131px;" value="{% if customer %}{{ customer.max_validity }}{% endif %}">
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                State
+              </td>
+              <td style="width: 180px">
+				<select name="state">
+				  {% if customer %}
+
+				  <option value="0" {% if customer.state == 0 %}selected{% endif %}>Blocked</option>
+				  <option value="1" {% if customer.state == 1 %}selected{% endif %}>Active</option>
+
+				  {% else %}
+
+				  <option value="0">Blocked</option>
+				  <option value="1" selected>Active</option>
+
+				  {% endif %}
+				</select>
+
+
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                <input type="submit" id="sbm_customer" value="Save" class="frmButton" style="height:20px;width:140px;">
+              </td>
+              <td style="width: 180px">
+              </td>
+            </tr>
+
+		  </tbody>
+        </form>
+	  </table>
+    </p>
+
+<!-- Users section -->
+{% if customer %}
+
+<!-- Update & delete connection -->
+<p>Users <a href="{% url action="create_user" customer_id=customer.id %}">(create new user)</a></p>
+<p>
+      <table width="100%" class="SearchTable" cellspacing="2" cellpadding="2">
+          <tbody>
+			<!-- Table headers -->
+			<tr class="SearchTableCell">
+              <td style="width: 180px;height:25px;">
+                id (name)
+              </td>
+              <td style="width: 180px">
+				smpp types
+              </td>
+
+              <td style="width: 180px">
+              </td>
+            </tr>
+
+			{% for user in customer.users %}
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px;height:25px;">
+                <a href="{% url action="update_user" customer_id=customer.id user_id=user.id %}">{{ user.id }}</a>
+              </td>
+
+              <td style="width: 180px">
+              {{ user.smpp_types|join:";" }}
+              </td>
+
+              <td style="width: 180px">
+				<a href="{% url action="delete_user" customer_id=customer.id user_id=user.id %}">Delete</a>
+              </td>
+            </tr>
+
+			{% endfor %}
+
+<!-- new user section end -->
+
+		  </tbody>
+ 	  </table>
+</p>
+
+
+
+    <p>
+  </div>
+</td>
+</tr>
+</tbody>
+</table>
+
+{% endif %}
+
+</p>
+
+</div>
+
+</div>
+{% endblock %}

@@ -1,4 +1,4 @@
--module(kadmin_providers_controller, [Req, SessionID]).
+-module(kadmin_networks_controller, [Req, SessionID]).
 
 -compile([{parse_transform, lager_transform}, export_all]).
 
@@ -8,10 +8,10 @@ before_(_) ->
     auth_lib:require_authentication(SessionID).
 
 index('GET', []) ->
-	{ok, Providers} = k_lib:get_providers(),
-	Total = length(Providers),
+	{ok, Networks} = k_lib:get_networks(),
+	Total = length(Networks),
     {ok, [
-		{providers, Providers},
+		{networks, Networks},
 		{total_rows, Total},
 		{active_page, 1},
 		{page_numbers, [1]}
@@ -19,27 +19,28 @@ index('GET', []) ->
 
 delete('GET', [ID]) ->
 	boss_flash:add(SessionID, notice, "Action result", io_lib:format("Provider ~p was successfully deleted", [ID])),
-	ok = k_lib:del_provider(ID),
+	ok = k_lib:del_network(ID),
 	{redirect, [{action, "index"}]}.
 
 
 create('GET', []) ->
-	{ok, Gateways} = k_lib:get_gtws(),
+	{ok, Providers}  = k_lib:get_providers(),
     {render_other, [{action, "edit_form"}], [
-		{gateways, Gateways}
+		{providers, Providers}
 		]};
 create('POST', []) ->
-	{ok, ID} = k_lib:create_provider(Req),
+	{ok, Network} = k_lib:create_network(Req),
+	ID = proplists:get_value(<<"id">>, Network),
 	{redirect, [{action, "update"}, {id, binary_to_list(ID)}]}.
 
 
 update('GET', [ID]) ->
-	{ok, Provider}  = k_lib:get_provider(ID),
-	{ok, Gateways} = k_lib:get_gtws(),
+	{ok, Providers}  = k_lib:get_providers(),
+	{ok, Network} = k_lib:get_network(ID),
     {render_other, [{action, "edit_form"}], [
-		{gateways, Gateways},
-		{provider, Provider}
+		{network, Network},
+		{providers, Providers}
 	   	]};
 update('POST', [ID]) ->
-	{ok, _Gateway} = k_lib:update_provider(ID, Req),
+	{ok, _Gateway} = k_lib:update_network(ID, Req),
 	{redirect, [{action, "update"}, {id, ID}]}.

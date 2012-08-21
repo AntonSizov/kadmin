@@ -1,0 +1,141 @@
+{% extends "kadmin/index.html" %}
+
+{% block title %}
+{% if user %}
+Edit user
+{% else %}
+Create user
+{% endif %}
+{% endblock %}
+
+{% block p_main_container %}
+
+<div id="pMainContainer" class="cbrPnlMainContainer">
+
+  <div id="ctl17_pSearchArea" onkeypress="javascript:return FireDefaultButton(event, 'ctl17_btnSearch')">
+
+	<table class="Info" id="Info" width="100%">
+      <tbody><tr>
+          <td>
+{% if user %}
+            Edit user
+{% else %}
+            Create user
+{% endif %}
+          </td>
+		</tr>
+	  </tbody>
+	</table>
+
+    <p>
+      <span id="ctl17_lError" style="color:Red;"></span>
+    </p>
+
+    <p>
+      <table width="100%" class="SearchTable" cellspacing="2" cellpadding="2">
+        <form method="post" action="{% if user %}{% url action="update_user" %}/{{ customer_id }}/{{ user.id }}{% else %}{% url action="create_user" %}/{{ customer_id }}{% endif %}" class="_no_class" style="margin-bottom: 0em;">
+          <tbody>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px;height:25px;">
+                User ID
+              </td>
+              <td style="width: 180px">
+
+			{% if user %}
+				{{ user.id }}
+			{% else %}
+                <input type="text" maxlength="500" name="id" id="ctl17_txtName" class="frmText" style="width:131px;" value="">
+			{% endif %}
+              </td>
+            </tr>
+
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                 New password
+              </td>
+              <td style="width: 180px">
+                <input type="password" maxlength="500" name="pass1" id="ctl17_txtName" class="frmText" style="width:131px;" value="">
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                 Confirm password
+              </td>
+              <td style="width: 180px">
+                <input type="password" maxlength="500" name="pass2" id="ctl17_txtName" class="frmText" style="width:131px;" value="">
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Permitted smpp types
+              </td>
+              <td style="width: 180px">
+				<table>
+
+				  <tr><td>
+					  User smpp types
+				  </td><td>
+					  <!-- null -->
+				  </td><td>
+					  Available smpp types
+				  </td></tr>
+
+				  <tr><td>
+				<select style="width:150px" multiple="multiple" id="user_smpp_types" size="3">
+				  {% if user %}
+				  {% for type in user.smpp_types %}
+				  <option value="{{ type }}">{{ type }}</option>
+				  {% endfor %}
+				  {% endif %}
+				</select>
+				</td><td>
+				  <a href="javascript:;" id="remove_user_smpp_type">remove -></a>
+				  </br></br>
+				  <a href="javascript:;" id="add_user_smpp_type"><- add</a>
+				</td><td>
+				  <select style="width:150px" multiple="multiple" id="available_smpp_types" size="3">
+				  {% if user %}
+
+				  {% for type in _smpp_types %}
+				  {% if type not in user.smpp_types %}
+				  <option value="{{ type }}">{{ type }}</option>
+				  {% endif %}
+				  {% endfor %}
+
+				  {% else %}
+
+				  {% for type in _smpp_types %}
+				  <option value="{{ type }}">{{ type }}</option>
+				  {% endfor %}
+
+				  {% endif %}
+
+				  </select>
+				</td></tr></table>
+                <input id="sbm_user_smpp_types" type="text" maxlength="500" name="smpp_types" class="frmText" style="display:none;">
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                <input type="submit" id="sbm_user" value="Save" class="frmButton" style="height:20px;width:140px;">
+              </td>
+              <td style="width: 180px">
+              </td>
+            </tr>
+
+		  </tbody>
+        </form>
+	  </table>
+    </p>
+
+
+
+</div>
+
+</div>
+{% endblock %}

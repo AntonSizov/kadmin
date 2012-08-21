@@ -22,13 +22,13 @@ get_navigation() ->
                     {link, "/gateways/index"}],
 
                     [{name, "Providers"},
-                    {link, "/providers/index"}]
+                    {link, "/providers/index"}],
 
-                    %% [{name, "Networks"},
-                    %% {link, "/networks/index"}],
+                    [{name, "Networks"},
+                    {link, "/networks/index"}],
 
-                    %% [{name, "Customers"},
-                    %% {link, "/customers/index"}]
+                    [{name, "Customers"},
+                    {link, "/customers/index"}]
 
                     ]
 			}

@@ -8,12 +8,11 @@ before_("login") -> ok;
 before_(_) ->
     auth_lib:require_authentication(SessionID).
 
-index('GET', [], {NavSpec, User}) ->
+index('GET', []) ->
 	Settings = boss_db:find(kadmin_settings, []),
 	lager:debug("Settings: ~p", [Settings]),
-    {ok, [
-		{your_login, User:login()},
-		NavSpec] ++ [{Setting:key(),Setting:value()} || Setting <- Settings]}.
+    {ok,
+		[{Setting:key(),Setting:value()} || Setting <- Settings]}.
 
 update('POST', []) ->
 	Update = fun(Key) ->

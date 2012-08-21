@@ -20,6 +20,6 @@ require_authentication(SessionId) ->
                     {redirect, "/login"};
                 _ ->
                     {ok, NavSpec} = navigation_lib:get_navigation(),
-                    {ok, {NavSpec, User}}
+                    {ok, [NavSpec, {user, User}]}
             end
     end.

@@ -30,7 +30,7 @@ Create gateway
     </p>
     <p>
       <table width="100%" class="SearchTable" cellspacing="2" cellpadding="2">
-        <form method="post" {% if gateway %}action="/gateways/update/{{ gateway.id }}"{% else %}action="/gateways/create"{% endif %} class="_no_class" style="margin-bottom: 0em;">
+        <form method="post" {% if gateway %}action="{% url action="update" %}/{{ gateway.id }}"{% else %}action="{% url action="create" %}"{% endif %} class="_no_class" style="margin-bottom: 0em;">
           <tbody>
 
 			{% if gateway %}
@@ -75,8 +75,8 @@ Create gateway
 	  </table>
     </p>
 
-
 <!-- Connections section -->
+{% if gateway %}
 
 <!-- Update & delete connection -->
 <p>Connections</p>
@@ -226,6 +226,7 @@ Create gateway
 </tbody>
 </table>
 
+{% endif %}
 
 </p>
 

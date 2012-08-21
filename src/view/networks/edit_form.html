@@ -1,0 +1,119 @@
+{% extends "kadmin/index.html" %}
+
+{% block title %}
+{% if network %}
+Edit network
+{% else %}
+Create network
+{% endif %}
+{% endblock %}
+
+{% block p_main_container %}
+
+<div id="pMainContainer" class="cbrPnlMainContainer">
+
+  <div id="ctl17_pSearchArea" onkeypress="javascript:return FireDefaultButton(event, 'ctl17_btnSearch')">
+
+	<table class="Info" id="Info" width="100%">
+      <tbody><tr>
+          <td>
+{% if network %}
+            Edit network
+{% else %}
+            Create network
+{% endif %}
+          </td>
+		</tr>
+	  </tbody>
+	</table>
+
+    <p>
+      <span id="ctl17_lError" style="color:Red;"></span>
+    </p>
+
+    <p>
+      <table width="100%" class="SearchTable" cellspacing="2" cellpadding="2">
+        <form method="post" {% if network %}action="{% url action="update" %}/{{ network.id }}"{% else %}action="{% url action="create" %}"{% endif %} class="_no_class" style="margin-bottom: 0em;">
+          <tbody>
+
+			{% if network %}
+			<tr class="SearchTableCell">
+              <td style="width: 180px;height:25px;">
+                Network ID
+              </td>
+              <td style="width: 180px">
+				{{ network.id }}
+              </td>
+            </tr>
+			{% endif %}
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Country code
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="country_code" id="ctl17_txtName" class="frmText" style="width:100px;"  {% if network %}value="{{ network.country_code }}"{% endif %}>
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Numbers length
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="numbers_len" id="ctl17_txtName" class="frmText" style="width:100px;"  {% if network %}value="{{ network.numbers_len }}"{% endif %}>
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Prefixes
+              </td>
+              <td style="width: 180px">
+                <input type="text" maxlength="500" name="prefixes" id="ctl17_txtName" class="frmText" style="width:100px;"  {% if network %}value="{{ network.prefixes|join:";" }}"{% endif %}>
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                Provider ID
+              </td>
+              <td style="width: 180px">
+
+				<select name="provider_id">
+				  {% if network %}
+
+				  {% for provider in providers %}
+				  <option value="{{ provider.id }}" {% if network.provider_id == provider.id %}selected{% endif %}>{{ provider.id }}</option>
+				  {% endfor %}
+
+				  {% else %}
+
+				  <option selected>Choose provider</option>
+				  {% for provider in providers %}
+				  <option value="{{ provider.id }}" >{{ provider.id }}</option>
+				  {% endfor %}
+
+				  {% endif %}
+				</select>
+
+              </td>
+            </tr>
+
+			<tr class="SearchTableCell">
+              <td style="width: 180px">
+                <input type="submit" value="Save" class="frmButton" style="height:20px;width:140px;">
+              </td>
+              <td style="width: 180px">
+              </td>
+            </tr>
+
+		  </tbody>
+        </form>
+	  </table>
+    </p>
+
+</div>
+
+</div>
+{% endblock %}
